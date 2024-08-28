@@ -1,0 +1,11 @@
+# ignore default site folders
+plugins
+litespeed
+upgrade
+uploads
+languages
+
+# Ignore node_modules and build directories in ddl_theme
+themes/ddl-theme/node_modules
+themes/ddl-theme/build
+themes/ddl-theme/package-lock.json

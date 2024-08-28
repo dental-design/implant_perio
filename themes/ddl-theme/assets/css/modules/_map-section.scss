@@ -1,0 +1,82 @@
+.map-section {
+    .wrapper {
+        .info-wrapper {
+            width: 40%;
+            padding: 60px;
+
+            .contact-info,
+            .opening-times {
+                max-width: 411px;
+                margin: auto;
+            }
+
+            .contact-info {
+                padding-bottom: 40px;
+                margin-bottom: 40px;
+                border-bottom: 3px solid $green;
+
+                .info-link {
+                    display: block;
+
+                    &:hover {
+                        color: $green;
+                    }
+                }
+            }
+
+            .opening-times {
+                .special-hours {
+                    margin-top: 40px;
+                }
+
+                .hours-container {
+                    justify-content: flex-start;
+
+                    .col {
+                        width: calc(50% - 10px);
+                        @include flex(column);
+                        align-items: flex-start;
+                        justify-content: center;
+                    }
+
+                    .days-column {
+                        border-right: 3px solid $green;
+                        max-width: 150px;
+                        padding-right: 10px;
+                        margin-right: 30px;
+                    }
+
+                    .info-text {
+                        &:not(:last-of-type) {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .map-wrapper {
+            min-height: 627px;
+            width: 60%;
+            position: relative;
+
+            .acf-map {
+                height: 100%;
+                width: 100%;
+            }
+
+            .cta-button-wrapper {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background-color: $white;
+                z-index: 2;
+                padding: 40px;
+
+                .cta-button {
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+}

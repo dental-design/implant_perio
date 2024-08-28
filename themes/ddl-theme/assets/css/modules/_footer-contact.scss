@@ -1,0 +1,83 @@
+.footer-contact-section {
+    .image-container {
+        width: 33.333%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .form-container {
+        width: 66.666%;
+        padding-left: 80px;
+
+
+        .form-inner {
+            padding: 100px 0 120px;
+            max-width: 795px;
+
+            #footer-form {
+                flex-wrap: wrap;
+                align-items: initial;
+
+                .form-input-left-wrapper {
+                    width: calc(35% - 7.5px);
+
+                    select {
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                .form-textarea-wrapper {
+                    width: calc(65% - 7.5px);
+                    
+                    textarea {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .checkbox-submit {
+                    width: 100%;
+                    margin-top: 40px;
+                    align-items: center;
+
+                    label {
+                        @include flex;
+                        align-items: center;
+
+                        span {
+                            vertical-align: middle;
+                            padding-top: 6px;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .button {
+                        margin-left: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (min-width: 1600px) {
+        .image-container {
+            width: 35%;
+        }
+    
+        .form-container {
+            width: 65%;
+            padding-left: 80px;
+
+            .form-inner {
+                max-width: 1058px;
+                padding-right: 40px;
+            }
+        }
+    }
+}

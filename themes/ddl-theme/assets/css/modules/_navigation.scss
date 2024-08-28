@@ -1,0 +1,49 @@
+.main-navigation {
+    nav {
+        padding: 45px 0;
+        align-items: center;
+        justify-content: center;
+
+        .home-link-wrapper {
+            margin-left: auto;
+            margin-right: auto;
+
+            .home-link {
+                svg {
+                    path {
+                        fill: $white;
+                        transition: all .4s ease-out;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: $green;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .nav-group {
+            li {
+                &:not(:last-of-type) {
+                    margin-right: 35px;
+                }
+
+                a {
+                    @include anchorHover($white, 2px);
+                }
+            }
+        }
+
+        .tel-link {
+            margin-left: 35px;
+            
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+}

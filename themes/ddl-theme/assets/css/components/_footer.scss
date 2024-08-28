@@ -1,0 +1,22 @@
+#footer {
+    .footer-section {
+        padding: 25px 0;
+
+        .footer-links-wrapper {
+            align-items: center;
+            justify-content: space-between;
+
+            .pipe {
+                background-color: $green;
+                width: 3px;
+                height: 24px;
+                margin: 0 5px;
+                display: inline-block;
+            }
+
+            .footer-link {
+                @include anchorHover($green, 3px);
+            }
+        }
+    }
+}

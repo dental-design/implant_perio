@@ -1,0 +1,72 @@
+.button {
+    appearance: none;
+    background-color: $green;
+    border: 3px solid $green;
+    border-radius: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 500;
+    line-height: 1;
+    padding: 20px 30px;
+    text-align: center;
+    font-family: $base-font-family;
+    text-decoration: none;
+    transition: all .4s ease;
+    user-select: none;
+    color: $white;
+    vertical-align: middle;
+    white-space: nowrap;
+    letter-spacing: 1.1px;
+    max-width: fit-content;
+
+    &:hover {
+        background-color: transparent;
+        color: $grey;
+    }
+
+    &.large-pad {
+        padding-left: 95px;
+        padding-right: 95px;
+    }
+
+    &.black-button {
+        background-color: $grey;
+        border-color: $grey;
+        color: $white;
+
+        &:hover {
+            color: $grey;
+            background-color: transparent;
+        }
+    }
+
+    &.transparent-button {
+        background-color: transparent;
+        color: $grey;
+
+        &:hover {
+            background-color: $green;
+            color: $grey;
+        }
+
+        &.text-white {
+            color: $white;
+    
+            &:hover {
+                color: $grey;
+            }
+        }
+
+        &.black-button {
+            border-color: $grey;
+
+            &:hover {
+                background-color: $grey;
+                color: $white;
+            }
+        }
+    }
+}
