@@ -24,7 +24,7 @@
             <h2 class="add-margin"><?= $heading; ?></h2>
 
             <!-- list items -->
-            <div class="list-wrapper flex-row">
+            <div class="list-wrapper">
                 <?php foreach($listItems as $block) : ?>
 
                     <div class="list-item flex-row">
