@@ -134,13 +134,13 @@ p {
 	a {
 		color: inherit;
 		transition: all 0.4s ease;
-		border-bottom: 1px solid rgba($true-black, 0);
+		border-bottom: 2px solid rgba($true-black, 0);
 		font-weight: inherit;
 		font-size: inherit;
 
 		&:hover {
 			color: $black;
-			border-bottom: 1px solid $true-black;
+			border-color: $true-black;
 		}
 	}
 }
@@ -349,6 +349,16 @@ p {
 // text colours
 .text-white {
 	color: $white;
+
+	a {
+		border-color: $white;
+		font-weight: bold;
+
+		&:hover {
+			border-color: $grey;
+			color: $grey;
+		}
+	}
 }
 
 .text-green {

@@ -164,6 +164,12 @@ main {
 		}
 	}
 
+	@media all and (min-width: 1600px) {
+		&.xtra {
+			max-width: 1710px;
+		}
+	}
+
 	@include mobile {
 		padding: 0 20px;
 	}

@@ -2,6 +2,7 @@
     .image-container {
         width: 33.333%;
         max-height: 365px;
+        max-width: 640px;
 
         img {
             height: 100%;
@@ -28,21 +29,7 @@
                 margin: 0 10px;
 
                 .image-wrapper {
-                    border-radius: 50%;
-                    height: 95px;
-                    width: 95px;
-                    @include flex(column);
-                    align-items: center;
-                    justify-content: center;
-                    transition: all .4s ease-out;
                     margin: 0 auto 25px;
-
-                    img {
-                        max-width: 64px;
-                        max-height: 48px;
-                        height: auto;
-                        width: auto;
-                    }
                 }
 
                 h3 {
@@ -58,6 +45,21 @@
                         background-color: $white;
                     }
                 }
+            }
+        }
+    }
+
+    @media all and (max-width: 1920px) {
+        .image-container {
+            max-width: 427px;
+        }
+    }
+
+    @media all and (min-width: 1600px) {
+        .treatments {
+            .treatments-inner {
+                max-width: 1058px; 
+                padding-right: 40px;
             }
         }
     }

@@ -1,0 +1,11 @@
+.cta-banner {
+    .cta-wrapper {
+        @include flex;
+        align-items: center;
+        justify-content: center;
+
+        .cta-button {
+            font-size: 46px;
+        }
+    }
+}

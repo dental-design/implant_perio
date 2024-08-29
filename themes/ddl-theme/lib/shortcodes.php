@@ -18,5 +18,9 @@ function custom_cta_button($text, $href, $additional_class = '') { ?>
         </span>
     </a>
 
-<?php 
-}
+<?php }
+
+// listing card function - used on treatment listing and team listing pages.
+function listing_cards($entry, $cardClass, $dataSource = '') { ?> 
+    <a href="" class="listing-card <?= $cardClass ?>"></a>
+<?php }

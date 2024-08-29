@@ -13,19 +13,70 @@ class GMap {
 			disableDefaultUI: true,
 			zoomControl: false,
 			center: new google.maps.LatLng(0, 0),
-			styles: [
+			styles: 
+			[
 				{
-					"featureType": "landscape.natural",
+					"featureType": "water",
+					"elementType": "geometry.fill",
+					"stylers": [
+						{
+							"color": "#d3d3d3"
+						}
+					]
+				},
+				{
+					"featureType": "transit",
+					"stylers": [
+						{
+							"color": "#808080"
+						},
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "geometry.stroke",
+					"stylers": [
+						{
+							"visibility": "on"
+						},
+						{
+							"color": "#b3b3b3"
+						}
+					]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "geometry.fill",
+					"stylers": [
+						{
+							"color": "#ffffff"
+						}
+					]
+				},
+				{
+					"featureType": "road.local",
 					"elementType": "geometry.fill",
 					"stylers": [
 						{
 							"visibility": "on"
 						},
 						{
-							"color": "#9FCC79"
+							"color": "#ffffff"
 						},
 						{
-							"lightness": "43"
+							"weight": 1.8
+						}
+					]
+				},
+				{
+					"featureType": "road.local",
+					"elementType": "geometry.stroke",
+					"stylers": [
+						{
+							"color": "#d7d7d7"
 						}
 					]
 				},
@@ -37,82 +88,113 @@ class GMap {
 							"visibility": "on"
 						},
 						{
-							"color": "#9FCC79"
-						},
-						{
-							"lightness": "46"
+							"color": "#ebebeb"
 						}
 					]
 				},
 				{
-					"featureType": "poi.business",
-					"elementType": "labels",
-					"stylers": [
-						{
-							"visibility": "off"
-						}
-					]
-				},
-				{
-					"featureType": "poi.school",
-					"elementType": "labels",
-					"stylers": [
-						{
-							"visibility": "off"
-						}
-					]
-				},
-				{
-					"featureType": "road",
+					"featureType": "administrative",
 					"elementType": "geometry",
 					"stylers": [
 						{
-							"lightness": 100
-						},
-						{
-							"visibility": "simplified"
+							"color": "#a7a7a7"
 						}
 					]
 				},
 				{
-					"featureType": "road",
-					"elementType": "labels",
+					"featureType": "road.arterial",
+					"elementType": "geometry.fill",
 					"stylers": [
 						{
-							"visibility": "simplified"
-						},
-						{
-							"color": "#757575"
+							"color": "#ffffff"
 						}
 					]
 				},
 				{
-					"featureType": "transit.line",
-					"elementType": "geometry",
+					"featureType": "road.arterial",
+					"elementType": "geometry.fill",
+					"stylers": [
+						{
+							"color": "#ffffff"
+						}
+					]
+				},
+				{
+					"featureType": "landscape",
+					"elementType": "geometry.fill",
 					"stylers": [
 						{
 							"visibility": "on"
 						},
 						{
-							"lightness": 700
+							"color": "#efefef"
 						}
 					]
 				},
 				{
-					"featureType": "water",
-					"elementType": "all",
+					"featureType": "road",
+					"elementType": "labels.text.fill",
 					"stylers": [
 						{
-							"color": "#66CC99"
+							"color": "#696969"
 						}
 					]
 				},
 				{
-					"featureType": "water",
+					"featureType": "administrative",
+					"elementType": "labels.text.fill",
+					"stylers": [
+						{
+							"visibility": "on"
+						},
+						{
+							"color": "#737373"
+						}
+					]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "labels.icon",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "labels",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "road.arterial",
+					"elementType": "geometry.stroke",
+					"stylers": [
+						{
+							"color": "#d6d6d6"
+						}
+					]
+				},
+				{
+					"featureType": "road",
+					"elementType": "labels.icon",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{},
+				{
+					"featureType": "poi",
 					"elementType": "geometry.fill",
 					"stylers": [
 						{
-							"color": "#9FCC79"
+							"color": "#dadada"
 						}
 					]
 				}

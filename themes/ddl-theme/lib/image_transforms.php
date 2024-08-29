@@ -6,7 +6,10 @@ function register_custom_image_sizes() {
         'pageBanner' => [1280, 630],
         'contactForm' => [900, 670],
         'imageTextColumn' => [576, 600],
-        
+        'ctaHero' => [1053, 539],
+        'processHero' => [467, 365],
+        'reviewMosaic' => [627, 742],
+        'listingBlock' => [1920, 900],
     );
 
     // Loop through each size and register both desktop and mobile versions

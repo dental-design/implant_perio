@@ -1,26 +1,52 @@
 <?php
+
+    // image transforms
+    global $detect;
+
+    if ($detect) {
+        $image_size = 'mobileListingBlock';
+    } else {
+        $image_size = 'listingBlock';
+    }
+
     $heading = $args['heading'];
     $listItems = $args['list_items'];
-    $backgroundColour = $args['background_colour'];
+    $image = $args['image'];
+
+    $counter = 1;
 ?>
 
-<section class="listing-block section" style="background-color: <?= $backgroundColour ?>">
-    <div class="container large">
-        
-        <!-- heading -->
-        <h2 class="main-heading <?= $backgroundColour = '#0a000a' ? 'text-white' : ''; ?>"><?= $heading ?></h2>
+<section class="listing-block bg-image section xtra-large-top no-bottom" data-source="<?= esc_attr(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.png')) ?>">
+    <div class="container">
+        <div class="wrapper bg-white">
+            
+            <!-- heading -->
+            <h2 class="add-margin"><?= $heading; ?></h2>
 
-        <!-- list items -->
-        <div class="list-wrapper">
-            <?php foreach($listItems as $block) : ?>
+            <!-- list items -->
+            <div class="list-wrapper flex-row">
+                <?php foreach($listItems as $block) : ?>
 
-                <div class="list-item">
-                    <span class="list-marker"></span>
+                    <div class="list-item flex-row">
 
-                    <p class="large-text list-item-text <?= $backgroundColour = '#0a000a' ? 'text-white' : ''; ?>"><?= $block['list_item'] ?></p>
-                </div>
+                        <!-- count icon -->
+                        <div class="count-icon bg-green circle">
+                            <p class="text-grey"><?= $counter; ?></p>
+                        </div>
 
-            <?php endforeach; ?>
+                        <!-- list heading -->
+                        <?php if (!empty($block['heading'])) : ?>
+                            <h3 class="add-margin small"><?= $block['heading']; ?></h3>
+                        <?php endif; ?>
+
+                        <!-- text content -->
+                        <p class="standard-text list-item-text"><?= $block['list_item'] ?></p>
+                    </div>
+
+                    <?php $counter++; ?>
+                <?php endforeach; ?>
+            </div>
+
         </div>
     </div>
 </section>

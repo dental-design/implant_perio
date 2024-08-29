@@ -102,6 +102,12 @@
         }
     }
 
+    &.green-line {
+        .cta-text {
+            border-color: $green;
+        }
+    }
+
     .cta-text {
         transition: all .4s ease-in-out;
         border-bottom: 3px solid $grey;
@@ -133,5 +139,31 @@
                 margin-left: 8px;
             }
         }
+    }
+}
+
+// icon and counter button backgrounds
+.circle {
+    height: 95px;
+    width: 95px;
+    min-height: 95px;
+    min-width: 95px;
+    border-radius: 50%;
+    @include flex(column);
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+
+    img {
+        max-width: 64px;
+        max-height: 48px;
+        height: auto;
+        width: auto;
+    }
+
+    p {
+        font-size: 50px;
+        font-weight: 500;
+        color: $grey;
     }
 }

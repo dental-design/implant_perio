@@ -18,6 +18,7 @@
 
         .heading-container {
             width: 20%;
+            max-width: 640px;
             position: relative;
 
             .heading-content {
@@ -63,6 +64,7 @@
 
         .image-container {
             position: relative;
+            max-width: 640px;
 
             &::after {
                 content: '';
@@ -92,12 +94,21 @@
 
             .text-wrapper {
                 max-width: 441px;
+                margin-right: auto;
                 
                 .button {
                     margin-top: 30px;
                 }
             }
 
+        }
+    }
+
+    @media all and (max-width: 1920px) {
+        .wrapper {
+            .heading-container {
+                max-width: 427px;
+            }
         }
     }
 
@@ -113,6 +124,10 @@
                 .heading-content {
                     left: 50%;
                 }
+            }
+
+            .text-container {
+                padding-left: 100px;
             }
         }
     }

@@ -30,7 +30,7 @@
         
                         <a href="<?= esc_url(the_permalink()); ?>" class="treatment-card">
         
-                            <div class="image-wrapper bg-green">
+                            <div class="image-wrapper bg-green circle">
                                 <img height="52" width="68" data-source="<?= esc_url(!empty(get_field('listing_icon')) ? wp_get_attachment_image_url(get_field('listing_icon')['id']) : get_theme_file_uri('assets/images/default-icon.png')); ?>" alt="<?= get_the_title(); ?>">
                             </div>
         

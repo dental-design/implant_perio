@@ -1,0 +1,64 @@
+.cta-hero {
+    padding-top: 120px;
+
+    .wrapper {
+        .text-wrapper {
+            width: 40%;
+            padding: 60px 40px 80px;
+
+            .standard-text {
+                max-width: 421px;
+            }
+
+            .button {
+                margin-top: 40px;
+            }
+        }
+
+        .image-cta-container {
+            @include flex(column);
+            justify-content: flex-start;
+            width: 60%;
+
+            .image-wrapper {
+                width: 100%;
+                height: 70%;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .cta-wrapper {
+                height: 30%;
+                @include flex(column);
+                align-items: center;
+                justify-content: center;
+                padding: 40px;
+    
+                .cta-button {
+                    font-size: 42px;
+                }
+            }
+        }
+    }
+
+    @media all and (min-width: 1600px) {
+        padding-top: 160px;
+    
+        .wrapper {
+            .text-wrapper {
+                width: 35%;
+                padding: 100px 70px;
+                @include flex(column);
+            }
+
+            .image-cta-container {
+                width: 65%;
+            }
+        }
+    }
+}
