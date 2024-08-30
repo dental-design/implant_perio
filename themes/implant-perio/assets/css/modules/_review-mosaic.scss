@@ -1,0 +1,106 @@
+.review-mosaic {
+    .container {
+        padding: 0;
+        max-width: 1920px;
+    }
+
+    .wrapper {
+        .sidebar {
+            width: 17.35%;
+            max-width: 333px;
+            position: relative;
+            @include flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            h2,
+            h3 {
+                color: $white;
+            }
+
+            .sidebar-text {
+                display: inline-block;
+                transform: rotate(-90deg);
+                white-space: nowrap;
+                margin-bottom: auto;
+                margin-top: 333px;
+            }
+        }
+
+        .main-content {
+            width: 83%;
+            max-width: 1587px;
+
+            .big {
+                width: 55%;
+                max-width: 960px;
+                padding: 80px 60px;
+            }
+
+            .small {
+                width: 45%;
+                max-width: 627px;
+            }
+
+            .button {
+                margin-top: 40px;
+            }
+
+            .top-content {
+                .slider-container {
+                    .image-slide {
+                        height: 100%;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                }
+
+                .text-container {
+                    .text-container-inner {
+                        max-width: 549px;
+                    }
+                }
+            }
+
+            .bottom-content {
+                .text-container {
+                    padding: 70px;
+
+                    .text-container-inner {
+                        max-width: 370px;
+
+                        h2 {
+                            font-size: 46px;
+                            line-height: 1.1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (min-width: 1600px) {
+        .wrapper {
+            .main-content {
+                .big {
+                    width: 61%; // seems to only fill all available space if it's set to add up to 101%
+                    padding: 100px 140px;
+                }
+    
+                .small {
+                    width: 40%;
+                }
+    
+                .button {
+                    margin-top: 60px;
+                }
+            }
+        }
+    }
+}

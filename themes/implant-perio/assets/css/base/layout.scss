@@ -1,0 +1,210 @@
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html,
+body {
+	background-color: $white;
+	margin: 0;
+
+	&.locked,
+	&.bio-locked {
+		overflow: hidden;
+	}
+}
+
+.unpadded {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+main {
+	position: relative;
+	z-index: 4;
+
+	.section {
+		&:not(&.faqs-section) { 
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.section {
+	width: 100%;
+	padding: 60px 0;
+	position: relative;
+	z-index: 1;
+
+	&.xtra-small {
+		padding: 10px 0;
+	}
+
+	&.small {
+		padding: 30px 0;
+	}
+
+	&.mid {
+		padding: 40px 0;
+	}
+
+	&.large {
+		padding: 90px 0;
+	}
+
+	&.xtra {
+		padding: 120px 0;
+	}
+
+	&.large-bottom {
+		padding-bottom: 120px;
+	}
+
+	&.no-pad {
+		padding: 0;
+	}
+
+	&.no-top {
+		padding-top: 0;
+	}
+
+	&.no-bottom {
+		padding-bottom: 0;
+	}
+
+	&.add-margin {
+		margin-bottom: 60px;
+	}
+
+	@include tablet {
+		padding: 50px 0;
+
+		&.large {
+			padding: 60px 0;
+		}
+
+		&.xtra {
+			padding: 80px 0;
+		}
+
+		&.large-bottom {
+			padding-bottom: 80px;
+		}
+
+		&.add-margin {
+			margin-bottom: 50px;
+		}
+	}
+
+	@include mobile {
+		padding: 40px 0;
+
+		&.small {
+			padding: 20px 0;
+		}
+
+		&.mid {
+			padding: 30px 0;
+		}
+
+		&.large {
+			padding: 40px 0;
+		}
+
+		&.xtra {
+			padding: 40px 0;
+		}
+
+		&.large-bottom {
+			padding-bottom: 40px;
+		}
+
+		&.add-margin {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: 1140px;
+	margin: 0 auto;
+	position: relative;
+	padding: 0 30px;
+	z-index: 3;
+
+	&.small {
+		max-width: 1020px;
+	}
+
+	&.large {
+		max-width: 1280px;
+	}
+
+	&.xtra {
+		max-width: 1440px;
+	}
+
+	&.full {
+		max-width: 1440px;
+		padding: 0;
+
+		@media all and (min-width: 1600px) {
+			max-width: initial;
+		}
+	}
+
+	@media all and (min-width: 1600px) {
+		&.xtra {
+			max-width: 1710px;
+		}
+	}
+
+	@include mobile {
+		padding: 0 20px;
+	}
+}
+
+.flex-row {
+	@include flex;
+}
+
+.inner-container {
+	width: 100%;
+	max-width: 1265px;
+	margin: 0 auto;
+}
+
+.bg-image {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.bg-grey {
+	background-color: $grey;
+}
+
+.bg-medium-grey {
+	background-color: $medium-grey;
+}
+
+.bg-black {
+	background-color: $black;
+}
+
+.bg-white {
+	background-color: $white;
+}
+
+.bg-green {
+	background-color: $green;
+}

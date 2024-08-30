@@ -1,0 +1,14 @@
+.listing-block {
+    .wrapper {
+        .list-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 30px;
+            row-gap: 60px;
+
+            .list-item {
+                align-items: center;
+            }
+        }
+    }
+}
