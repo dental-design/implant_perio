@@ -4,7 +4,7 @@ function register_custom_image_sizes() {
     // Array of custom image sizes - add custom size here and function will take care of adding a mobile size. 
     $custom_sizes = array(
         'pageBanner' => [1280, 630],
-        'contactForm' => [900, 670],
+        'contactForm' => [640, 879],
         'imageTextColumn' => [576, 600],
         'ctaHero' => [1053, 539],
         'processHero' => [467, 365],
@@ -40,6 +40,7 @@ function my_mobile_detect_setup() {
         
         $mobile_detect = new TinyWP_Mobile_Detect;
         $detect = $mobile_detect->isMobile() && !$mobile_detect->isTablet();
+        
     } else {
         $detect = false; // Default value if Mobile Detect library is not found
     }

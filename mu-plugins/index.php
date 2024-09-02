@@ -29,6 +29,11 @@ function custom_post_types() {
         'has_archive' => false,
         'public' => true,
         'hierarchical' => true,
+        'rewrite' => [
+            'slug' => '', 
+            'with_front' => false,
+            'hierarchical' => true, 
+        ],
         'labels' => [
             'name' => 'Treatments',
             'singular_name' => 'Treatment',
@@ -37,7 +42,7 @@ function custom_post_types() {
             'all_items' => 'All Treatments',
         ],
         'menu_icon' => 'dashicons-portfolio',
-        'show_in_rest' => true,
+        'show_in_rest' => false,
         'supports' => [
             'title',
             'thumbnail',

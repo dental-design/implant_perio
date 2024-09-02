@@ -41,8 +41,6 @@
                 <!-- site last updated -->
                 <p class="text-white footer-text small-text">Site last updated: <?= date('F Y', strtotime(get_lastpostmodified('GMT'))); ?></p>
 
-
-
             </div>
         </div>
     </section>
@@ -51,6 +49,9 @@
 
 <!-- cookie policy -->
 <!-- <?php get_template_part('template-parts/_cookie-policy'); ?> -->
+
+<!-- team member bios -->
+<?php get_template_part('template-parts/_team-member-bios'); ?>
 
 <?php wp_footer(); ?>
 </body>

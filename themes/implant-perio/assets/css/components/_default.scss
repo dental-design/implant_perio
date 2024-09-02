@@ -1,13 +1,14 @@
 // plus icons
 .plus-wrapper {
     .line {
-        width: 18px;
-        height: 1px;
-        background-color: $black;
+        width: 30px;
+        height: 5px;
+        background-color: $medium-grey;
         transition: all .4s ease-out;
         
         &:last-of-type {
             transform: rotate(90deg);
+            margin-top: -5px;
         }
     }
 
@@ -119,6 +120,7 @@
     .cta-text {
         transition: all .4s ease-in-out;
         border-bottom: 3px solid $grey;
+        font-size: 46px;
     }
     
     .cta-arrow {
@@ -162,6 +164,19 @@
     justify-content: center;
     margin-right: 30px;
 
+    &.small {
+        height: 70px;
+        width: 70px;
+        min-height: 70px;
+        min-width: 70px;
+        margin-right: 20px;
+
+        img {
+            max-width: 38px;
+            max-height: 38px;
+        }
+    }
+
     img {
         max-width: 64px;
         max-height: 48px;
@@ -173,5 +188,60 @@
         font-size: 50px;
         font-weight: 500;
         color: $grey;
+    }
+}
+
+// listing blocks
+.listing-card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    width: 100%;
+}
+
+.listing-card {
+    @include flex(column);
+
+    &.treatment-card {
+        .text-wrapper {
+            .standard-text {
+                max-width: 240px;
+            }
+        }
+    }
+
+    .image-wrapper {
+        width: 100%;
+        height: 33dvw;
+        min-height: 250px;
+        max-height: 318px;
+        background-color: $medium-grey;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .text-wrapper {
+        padding: 50px;
+        @include flex(column);
+        flex: 1 1 auto;
+
+        h2 {
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .standard-text {
+            margin: auto;
+        }
+
+        .button {
+            margin: 40px auto 0;
+        }
     }
 }

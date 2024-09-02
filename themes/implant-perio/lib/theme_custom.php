@@ -125,9 +125,9 @@ add_filter('acf/fields/google_map/api', 'defaultMapKey');
 
 // add ability to use breadcrumbs
 function custom_breadcrumbs() {
-    $delimiter = '<span class="text-white large-text semi-bold-text"> &gt; </span>';
+    $delimiter = '<span class="text-white standard-text"> &gt; </span>';
     $home = 'Home'; // text for the 'Home' link
-    $before = '<span class="current-page text-white large-text semi-bold-text">'; // tag before the current crumb
+    $before = '<span class="current-page text-white standard-text">'; // tag before the current crumb
     $after = '</span>'; // tag after the current crumb
 
     if (!is_home() && !is_front_page() || is_paged()) {
@@ -137,7 +137,7 @@ function custom_breadcrumbs() {
 
         $homeLink = get_bloginfo('url');
 
-        echo '<a class="text-white large-text semi-bold-text" href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+        echo '<a class="text-white standard-text" href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
 
         if (is_category()) {
 
@@ -165,14 +165,14 @@ function custom_breadcrumbs() {
 
                 while ($parent_id) {
                     $page = get_post($parent_id);
-                    $breadcrumbs[] = '<a class="text-white large-text semi-bold-text" href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+                    $breadcrumbs[] = '<a class="text-white standard-text" href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
                     $parent_id  = $page->post_parent;
                 }
 
                 $breadcrumbs = array_reverse($breadcrumbs);
 
                 // echo treatment page as main parent
-                echo '<a class="text-white large-text semi-bold-text" href="' . get_permalink('17') . '">' . get_the_title('17') . '</a>' . $delimiter;
+                echo '<a class="text-white standard-text" href="' . get_permalink('17') . '">' . get_the_title('417') . '</a>' . $delimiter;
 
                 foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $delimiter . ' ';
 
@@ -191,7 +191,7 @@ function custom_breadcrumbs() {
 
             while ($parent_id) {
                 $page = get_post($parent_id);
-                $breadcrumbs[] = '<a class="text-white large-text semi-bold-text" href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+                $breadcrumbs[] = '<a class="text-white standard-text" href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
                 $parent_id  = $page->post_parent;
             }
 

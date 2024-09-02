@@ -1,43 +1,64 @@
 <?php
+
+    // image transforms
+    global $detect;
+
+    if ($detect) {
+        $image_size = 'mobileFullWidthImage';
+    } else {
+        $image_size = 'fullWidthImage';
+    }
+
     $heading = $args['heading'];
+    $image = $args['image'];
     $faqs = $args['faqs'];
 ?>
 
-<section class="section faqs-section bg-grey">
-    <div class="container small">
+<section 
+    class="section faqs-section bg-image"
+    data-source="<?= esc_attr(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')) ?>"
+>
+    <div class="container xtra bg-white">
 
-        <h2 class="main-heading center-text"><?= $heading ?></h2>
+        <div class="faq-inner">
 
-        <div class="faq-wrapper">
-
-            <?php
-            if ($faqs) : 
-            foreach ($faqs as $faq) : 
-            ?>
-
-                <div class="faq-card">
-
-                    <div class="question-button-wrapper accordion">
-                        <h3 class="question small base-text"><?= $faq['question']; ?></h3>
-                        
-                        <div class="plus-wrapper">
-                            <div class="line"></div>
-                            <div class="line"></div>
+            <!-- section heading -->
+            <h2 class="main-heading"><?= $heading ?></h2>
+    
+            <div class="faq-wrapper">
+    
+                <?php
+                if ($faqs) : 
+                foreach ($faqs as $faq) : 
+                ?>
+    
+                    <div class="faq-card">
+    
+                        <!-- question -->
+                        <div class="question-button-wrapper accordion">
+                            <h3 class="question base-text"><?= $faq['question']; ?></h3>
+                            
+                            <div class="plus-wrapper">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>  
+    
+                        <!-- answer -->
+                        <div class="answer-wrapper">
+                            <p class="answer standard-text"><?= $faq['answer'] ?></p>
                         </div>
-                    </div>  
-
-                    <div class="answer-wrapper">
-                        <p class="answer large-text"><?= $faq['answer'] ?></p>
+    
                     </div>
-
-                </div>
-
-            <?php
-            endforeach;
-            endif;
-            ?>
-
+    
+                <?php
+                endforeach;
+                endif;
+                ?>
+    
+            </div>
         </div>
+
     </div>
 </section>
 

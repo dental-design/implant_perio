@@ -146,7 +146,7 @@ main {
 	}
 
 	&.large {
-		max-width: 1280px;
+		max-width: 1380px;
 	}
 
 	&.xtra {
@@ -195,6 +195,10 @@ main {
 
 .bg-medium-grey {
 	background-color: $medium-grey;
+}
+
+.bg-light-grey {
+	background-color: $light-grey;
 }
 
 .bg-black {

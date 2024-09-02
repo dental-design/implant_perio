@@ -17,7 +17,7 @@
 
 <section 
     class="full-width-image-banner full-image-section bg-image section xtra-large-top no-bottom" 
-    data-source="<?= esc_attr(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.png')) ?>"
+    data-source="<?= esc_attr(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')) ?>"
 >
     <?php if (!empty($heading) or !empty($textContent)) : ?>
         <div class="container">

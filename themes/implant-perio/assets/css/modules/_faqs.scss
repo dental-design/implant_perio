@@ -1,0 +1,40 @@
+.faqs-section {
+    .container {
+        padding: 100px 230px;
+    }
+
+    h2 {
+        margin-bottom: 60px;
+    }
+
+    .faq-card {
+        border-top: 3px solid $grey;
+        background-color: $white;
+        padding-top: 50px;
+
+        &:not(:last-of-type) {
+            margin-bottom: 50px;
+        }
+
+        &:last-of-type {
+            border-bottom: 3px solid $grey;
+            padding-bottom: 50px;
+        }
+
+        .question-button-wrapper {
+            @include flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .answer-wrapper {
+            padding-top: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease-out;
+            max-width: 1058px;
+            width: 95%;
+        }
+    }
+}

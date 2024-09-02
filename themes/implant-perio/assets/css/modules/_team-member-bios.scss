@@ -1,0 +1,87 @@
+.team-member-bios {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100dvw;
+    background-color: rgba($true-black, .6);
+    z-index: 11;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .6s ease-in-out;
+
+
+    &.active {
+        pointer-events: all;
+        opacity: 1;
+    }
+}
+
+.team-member-bio-card {
+    position: fixed;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    transform: translateX(600px);
+    pointer-events: none;
+    height: 100dvh;
+    width: 100dvw;
+    max-width: 600px;
+    padding: 110px 40px 100px;
+    overflow-y: scroll;
+    transition: all .6s ease-in-out;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateX(0);
+    }
+
+    .close-icon {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        @include flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-size: 22px;
+        cursor: pointer;
+        transition: all .4s ease-in-out;
+        border: 1px solid $black;
+
+        &:hover {
+            background-color: $white;
+            color: $black;
+        }
+    }
+
+    .team-bio-top-content {
+        border-bottom: 3px solid $grey;
+        margin-bottom: 30px;
+
+        img,
+        h2 {
+            margin-bottom: 40px;
+        }
+    
+        .job-title,
+        .qualification  {
+            margin-bottom: 10px;
+        }
+    
+        .gdc {
+            display: inline-block;
+            @include anchorHover($black, 2px);
+        }
+
+        > * {
+            &:last-child {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

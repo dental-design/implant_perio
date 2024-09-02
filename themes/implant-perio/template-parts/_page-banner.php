@@ -66,8 +66,47 @@
         <div class="container small center-text">
 
             <?php if (is_front_page()) : ?>
-                <?php custom_cta_button('Refer your patients to us today', '#', 'refer-patients text-white center-text'); ?>
+
+                <!-- cta text - functions.php shortcodes -->
+                <?php custom_cta_button(get_field('cta_link')['title'], get_field('cta_link')['url'], 'page-banner-cta text-white center-text'); ?>
+
             <?php else : ?>
+
+                <div class="hero-container-content">
+
+                    <!-- heading -->
+                    <?php if (!empty(get_field('heading'))) : ?>
+                        <h2 class="text-white add-margin center-text"><?= get_field('heading'); ?></h2>
+                    <?php endif; ?>
+
+                    <!-- text content -->
+                    <?php if (!empty(get_field('text_content'))) : ?>
+                        <p class="text-white standard-text add-margin center-text"><?= get_field('text_content'); ?></p>
+                    <?php endif; ?>
+
+                    <!-- button links -->
+                    <?php if (!empty(get_field('page_links'))) : ?>
+                        <div class="page-links-wrapper flex-row">
+
+                            <?php foreach (get_field('page_links') as $post) : setup_postdata($post); ?>
+
+                                <a href="<?= esc_url(the_permalink()); ?>" class="button transparent-button page-banner-links-button text-white"><?= !empty(get_field('listing_title')) ? get_field('listing_title') : get_the_title(); ?></a>
+
+                            <?php 
+                                endforeach; 
+                                wp_reset_postdata();
+                            ?>
+
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- contact us page specifc info -->
+                    <?php if (is_page(13)) : ?>
+                        
+                        <?php get_template_part('template-parts/_contact-info'); ?>
+
+                    <?php endif; ?>
+                </div>
 
             <?php endif; ?>
 

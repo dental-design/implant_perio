@@ -1,0 +1,16 @@
+.contact-info-bar {
+    align-items: center;
+    justify-content: space-between;
+
+    .contact-info-bar-item {
+        align-items: center;
+
+        .image-wrapper {
+            margin-bottom: 0;
+        }
+
+        .item-text {
+            @include anchorHover($white, 2px);
+        }
+    }
+}

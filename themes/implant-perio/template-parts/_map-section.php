@@ -44,10 +44,10 @@
                     <p class="standard-text text-white address add-margin"><?= $address ?></p>
 
                     <!-- email address - global acf -->
-                    <a class="info-link standard-text text-white" href="mailto:<?= $email; ?>"><?= $email; ?></a>
+                    <a aria-label="practice contact email address" class="info-link standard-text text-white" href="mailto:<?= $email; ?>"><?= $email; ?></a>
 
                     <!-- telephone number - global acf -->
-                    <a class="info-link standard-text text-white" href="tel:<?= str_replace(' ', '', $telephone); ?>"><?= $telephone; ?></a>
+                    <a aria-label="practice telephone number" class="info-link standard-text text-white" href="tel:<?= str_replace(' ', '', $telephone); ?>"><?= $telephone; ?></a>
                 </div>
 
                 <div class="opening-times">
@@ -77,9 +77,9 @@
                     </div>
                 </div>
 
-                <!-- get directions button - functions.php shortcode-->
+                <!-- get directions button - functions.php shortcode -->
                 <div class="cta-button-wrapper">
-                    <?php custom_cta_button('Get directions', '#', 'get-directions'); ?>
+                    <?php custom_cta_button('Get directions', 'https://www.google.com/maps?q=' . $mapLocation['lat'] . ',' . $mapLocation['lng'], 'get-directions'); ?>
                 </div>
             </div>
 
