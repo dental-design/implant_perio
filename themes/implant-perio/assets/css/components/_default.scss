@@ -245,3 +245,16 @@
         }
     }
 }
+
+// breadcrumb spacing
+.breadcrumb {
+    margin-top: 15px;
+
+    a {
+        @include anchorHover($white, 1px);
+    }
+
+    .delimiter {
+        margin: 0 8px;
+    }
+}

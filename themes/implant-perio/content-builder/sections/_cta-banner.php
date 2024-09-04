@@ -3,7 +3,7 @@
 ?>
 
 <section class="bg-grey cta-banner section xtra">
-    <div class="container small">
+    <div class="container xtra">
 
         <!-- cta -->
         <div class="cta-wrapper center-text">

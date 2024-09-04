@@ -44,7 +44,7 @@
 
                 <!-- image -->
                 <div class="image-wrapper">
-                <img data-source="<?= esc_url(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')); ?>" alt="" height="480" width="864" />
+                    <img data-source="<?= esc_url(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')); ?>" alt="<?= !empty($image['alt']) ? $image['alt'] : $heading; ?>" height="480" width="864" />
                 </div>
 
                 <!-- cta - functions.php shortcodes -->

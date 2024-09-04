@@ -125,7 +125,7 @@ add_filter('acf/fields/google_map/api', 'defaultMapKey');
 
 // add ability to use breadcrumbs
 function custom_breadcrumbs() {
-    $delimiter = '<span class="text-white standard-text"> &gt; </span>';
+    $delimiter = '<span class="text-white standard-text delimiter">&gt;</span>';
     $home = 'Home'; // text for the 'Home' link
     $before = '<span class="current-page text-white standard-text">'; // tag before the current crumb
     $after = '</span>'; // tag after the current crumb

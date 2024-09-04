@@ -26,7 +26,7 @@ function default_files() {
     wp_enqueue_script('main_default_javascript', get_theme_file_uri('/build/bundle.js'), array('jquery'), '1.0', true);
 
     // fancybox
-    wp_enqueue_script('fancybox', get_theme_file_uri('/assets/js/fancybox.js'), array('jquery'), '1.0', true);
+    // wp_enqueue_script('fancybox', get_theme_file_uri('/assets/js/fancybox.js'), array('jquery'), '1.0', true);
 
     // add main site url as variable for js to grab. 
     wp_localize_script('main_default_javascript', 'mainSiteData', [

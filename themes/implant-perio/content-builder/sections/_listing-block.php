@@ -39,13 +39,17 @@
                             <p class="text-grey"><?= $counter; ?></p>
                         </div>
 
-                        <!-- list heading -->
-                        <?php if (!empty($block['heading'])) : ?>
-                            <h3 class="add-margin small"><?= $block['heading']; ?></h3>
-                        <?php endif; ?>
+                        <div class="text-wrapper">
 
-                        <!-- text content -->
-                        <p class="standard-text list-item-text"><?= $block['list_item'] ?></p>
+                            <!-- list heading -->
+                            <?php if (!empty($block['heading'])) : ?>
+                                <h3 class="add-margin small"><?= $block['heading']; ?></h3>
+                            <?php endif; ?>
+    
+                            <!-- text content -->
+                            <p class="standard-text list-item-text"><?= $block['list_item'] ?></p>
+                            
+                        </div>
                     </div>
 
                     <?php $counter++; ?>

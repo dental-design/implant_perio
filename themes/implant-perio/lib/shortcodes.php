@@ -24,6 +24,7 @@ function custom_cta_button($text, $href, $additional_class = '') { ?>
 function listing_cards($id, $image, $title, $description, $cardClass, $cardLink, $buttonText, $dataSource = false) { ?> 
     <a 
         href="<?= $cardLink; ?>" 
+        id="<?= strtolower(str_replace([' ', '.'], ['-', ''], $title)); ?>"
         class="listing-card bg-white center-text <?= $cardClass; ?>" 
         <?php if ($dataSource) : ?>data-team="<?= $id; ?><?php endif; ?>"
     >

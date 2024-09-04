@@ -736,32 +736,26 @@ h2.light {
 
 h1 {
   font-size: 50px;
-  line-height: 60px;
 }
 h1.inner-main {
   font-size: 40px;
-  line-height: 55px;
 }
 @media all and (max-width: 1000px) {
   h1 {
     font-size: 42px;
-    line-height: 47px;
   }
 }
 @media all and (max-width: 600px) {
   h1 {
     font-size: 36px;
-    line-height: 40px;
   }
 }
 
 h2 {
   font-size: 40px;
-  line-height: 55px;
 }
 h2.main-heading {
   font-size: 50px;
-  line-height: 60px;
 }
 h2.team-heading {
   font-size: 36px;
@@ -785,22 +779,18 @@ h2.team-heading {
 
 h3 {
   font-size: 30px;
-  line-height: 36px;
   font-weight: 500;
 }
 h3.small {
   font-size: 28px;
   letter-spacing: 1.2;
-  line-height: 34px;
 }
 h3.large {
   font-size: 40px;
   letter-spacing: 1.2;
-  line-height: 55px;
 }
 h3.question {
   font-size: 34px;
-  line-height: 33px;
   font-weight: 500;
 }
 @media all and (max-width: 1000px) {
@@ -1321,6 +1311,44 @@ p a:hover {
 }
 .listing-card .text-wrapper .button {
   margin: 40px auto 0;
+}
+
+.breadcrumb {
+  margin-top: 15px;
+}
+.breadcrumb a {
+  position: relative;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.breadcrumb a::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  height: 1px;
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 0;
+  transition: max-width 0.4s ease;
+}
+.breadcrumb a:hover::after {
+  left: 0;
+  right: initial;
+  max-width: 100%;
+}
+.breadcrumb a.show-hide::after {
+  max-width: 100%;
+  left: 0;
+  right: initial;
+}
+.breadcrumb a.show-hide:hover::after {
+  max-width: 0;
+  right: 0;
+  left: initial;
+}
+.breadcrumb .delimiter {
+  margin: 0 8px;
 }
 
 body.compensate-for-scrollbar {
@@ -2977,6 +3005,7 @@ body.compensate-for-scrollbar {
 
 .faqs-section .container {
   padding: 100px 230px;
+  max-width: 1380px;
 }
 .faqs-section h2 {
   margin-bottom: 60px;
@@ -3007,6 +3036,187 @@ body.compensate-for-scrollbar {
   transition: all 0.4s ease-out;
   max-width: 1058px;
   width: 95%;
+}
+
+.info-blocks-section {
+  padding: 120px 0;
+}
+.info-blocks-section .cta-wrapper {
+  margin: 80px auto 0;
+}
+.info-blocks-section .cta-wrapper .cta-button {
+  margin: 0 auto;
+}
+.info-blocks-section .info-block-wrapper .info-container-card:not(:last-of-type) {
+  margin-bottom: 40px;
+}
+.info-blocks-section .info-block-wrapper .info-container-card .image-wrapper {
+  max-width: 475px;
+  min-width: 475px;
+  position: relative;
+  margin-right: 180px;
+}
+.info-blocks-section .info-block-wrapper .info-container-card .image-wrapper img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.info-blocks-section .info-block-wrapper .info-container-card .image-wrapper .count-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -90px;
+  margin-right: 0;
+  height: 180px;
+  width: 180px;
+}
+.info-blocks-section .info-block-wrapper .info-container-card .image-wrapper .count-icon p {
+  font-size: 100px;
+  color: #cff85d;
+}
+.info-blocks-section .info-block-wrapper .info-container-card .text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 0;
+  padding-right: 90px;
+}
+.info-blocks-section .info-block-wrapper .info-container-card .text-content .text-inner {
+  max-width: 868px;
+}
+.info-blocks-section .info-block-wrapper .info-container-card .text-content h3 {
+  margin-right: auto;
+}
+
+.before-after-image-block {
+  padding-top: 0;
+}
+.before-after-image-block .before-after-container {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  height: 100%;
+}
+.before-after-image-block .before-after-container .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.before-after-image-block .before-after-container .image.after-image {
+  clip-path: inset(0 50% 0 0);
+}
+.before-after-image-block .before-after-container .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 3;
+  margin-bottom: 0;
+  cursor: ew-resize;
+}
+.before-after-image-block .before-after-container .slider-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 10px);
+  width: 10px;
+  height: 100%;
+  background-color: #ffffff;
+  cursor: ew-resize;
+  z-index: 2;
+}
+.before-after-image-block .before-after-container .slider-button .slider-button-inner {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%);
+  height: 40px;
+  width: 40px;
+  left: 50%;
+  border-radius: 50%;
+  z-index: 3;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.before-after-image-block .before-after-container .slider-button .slider-button-inner::before, .before-after-image-block .before-after-container .slider-button .slider-button-inner::after {
+  content: "";
+  padding: 3px;
+  display: inline-block;
+  border: solid #5D5D5D;
+  border-width: 0 2px 2px 0;
+  transform: rotate(-45deg);
+}
+.before-after-image-block .before-after-container .slider-button .slider-button-inner::before {
+  transform: rotate(135deg);
+}
+
+.fifty-fifty-section {
+  position: relative;
+  padding-bottom: 120px;
+}
+.fifty-fifty-section::after {
+  content: "";
+  height: 100%;
+  width: 50%;
+  background-color: #aca8a5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.fifty-fifty-section .wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 0 30px;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.fifty-fifty-section .fifty-column {
+  padding-top: 100px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fifty-fifty-section .fifty-column .inner-content {
+  max-width: 524px;
+}
+.fifty-fifty-section .fifty-column .inner-content .image-wrapper {
+  max-height: 414px;
+  margin: 0 auto 60px;
+}
+.fifty-fifty-section .fifty-column .inner-content .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.fifty-fifty-section .fifty-column .inner-content .button {
+  margin-top: 40px;
+}
+@media all and (min-width: 1600px) {
+  .fifty-fifty-section {
+    padding-bottom: 140px;
+  }
+  .fifty-fifty-section .fifty-column {
+    padding-top: 120px;
+  }
+  .fifty-fifty-section .fifty-column .inner-content {
+    max-width: 698px;
+  }
+  .fifty-fifty-section .fifty-column .inner-content .button {
+    margin-top: 50px;
+  }
 }
 
 .footer-contact-section .image-container {
