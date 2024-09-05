@@ -1,0 +1,9 @@
+.reviews-banner {
+    .container {
+        padding: 0;
+    }
+
+    @include mobile {
+        padding: 30px;
+    }
+}

@@ -31,7 +31,7 @@
         
                 <!-- button -->
                 <?php if (!empty($button)) : ?>
-                    <a href="<?= $button['url']; ?>" class="button black-button large-pad"><?= $button['title']; ?></a>
+                    <a href="<?= $button['url']; ?>" class="button transparent-button"><?= $button['title']; ?></a>
                 <?php endif; ?>
 
             </div>

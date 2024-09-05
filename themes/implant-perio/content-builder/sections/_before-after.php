@@ -42,10 +42,10 @@
                     <div class="image-overlay before-after-container">
 
                         <!-- before image -->
-                        <div class="image fifty-image bg-image before-image" data-source="<?= esc_attr(!empty($beforeImage) ? wp_get_attachment_image_url($beforeImage['id'], $image_size) : get_theme_file_uri('assets/images/default-image.png')); ?>"></div>
+                        <div class="image fifty-image bg-image before-image" data-source="<?= esc_attr(!empty($beforeImage) ? wp_get_attachment_image_url($beforeImage['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')); ?>"></div>
 
                         <!-- after image -->
-                        <div class="image fifty-image bg-image after-image" data-source="<?= esc_attr(!empty($beforeImage) ? wp_get_attachment_image_url($afterImage['id'], $image_size) : get_theme_file_uri('assets/images/default-image.png')); ?>"></div>
+                        <div class="image fifty-image bg-image after-image" data-source="<?= esc_attr(!empty($beforeImage) ? wp_get_attachment_image_url($afterImage['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')); ?>"></div>
 
                         <!-- before after slider -->
                         <input type="range" min="1" max="100" value="50" class="slider" name='slider' id="slider" />

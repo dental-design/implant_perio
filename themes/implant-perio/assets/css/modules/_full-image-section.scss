@@ -21,4 +21,24 @@
             }
         }
     }
+
+    @include tablet {
+        min-height: 575px;
+
+        .container {
+            .wrapper {
+                padding: 60px 40px;
+            }
+        }
+    }
+
+    @include tablet {
+        min-height: initial;
+
+        .container {
+            .wrapper {
+                padding: 60px 30px;
+            }
+        }
+    }
 }

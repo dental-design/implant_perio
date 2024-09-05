@@ -10,11 +10,12 @@
 
     $entries = $args['entries'];
     $image = $args['image'];
+    $background = $args['background'];
 ?>
 
 <?php if ($entries) : ?>
 
-    <section class="treatments-hero bg-medium-grey">
+    <section class="treatments-hero <?= $background ? 'bg-medium-grey' : 'bg-grey'; ?>">
         <div class="wrapper flex-row">
 
             <!-- image -->
@@ -23,7 +24,7 @@
             </div>
 
             <!-- treatments -->
-            <div class="treatments bg-medium-grey">
+            <div class="treatments <?= $background ? 'bg-medium-grey' : 'bg-grey'; ?>">
                 <div class="treatments-inner flex-row">
 
                     <?php foreach($entries as $post) : setup_postdata($post); ?>

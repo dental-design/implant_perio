@@ -53,7 +53,7 @@
         <!-- image -->
         <div class="image-container">
             <div class="image-overlay intro-content-image">
-                <img src="<?= esc_url(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.png')); ?>" alt="<?= esc_attr($heading); ?> image" height="100%" width="100%" />
+                <img src="<?= esc_url(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')); ?>" alt="<?= esc_attr($heading); ?> image" height="100%" width="100%" />
             </div>
         </div>
     </div>

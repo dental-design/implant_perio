@@ -5,6 +5,8 @@
         .text-wrapper {
             width: 40%;
             padding: 60px 40px 80px;
+            @include flex(column);
+            justify-content: center;
 
             .standard-text {
                 max-width: 421px;
@@ -53,7 +55,6 @@
             .text-wrapper {
                 width: 35%;
                 padding: 100px 70px;
-                @include flex(column);
             }
 
             .image-cta-container {

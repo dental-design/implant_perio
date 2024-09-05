@@ -27,7 +27,7 @@
                     <div class="slide-content-wrapper">
 
                         <!-- slide image -->
-                        <div class="image-wrapper bg-image" style="background-image: url('<?= esc_attr(!empty($block['image']) ? wp_get_attachment_image_url($block['image']['id'], $image_size) : get_theme_file_uri('assets/images/default-image.png')); ?>');"></div>
+                        <div class="image-wrapper bg-image" style="background-image: url('<?= esc_attr(!empty($block['image']) ? wp_get_attachment_image_url($block['image']['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')); ?>');"></div>
     
                         <!-- slide text content -->
                         <div class="text-wrapper">

@@ -6,7 +6,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    font-size: 22px;
+    font-size: 20px;
     -webkit-font-smoothing: antialiased;
     font-weight: 500;
     line-height: 1;
@@ -68,5 +68,13 @@
                 color: $white;
             }
         }
+    }
+
+    @include tablet {
+        font-size: 18px;
+    }
+
+    @include mobile {
+        font-size: 16px;
     }
 }

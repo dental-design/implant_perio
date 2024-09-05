@@ -7,5 +7,30 @@
         .standard-text {
             max-width: 965px;
         }
+
+        .button {
+            margin-top: 60px;
+        }
+    }
+
+    @include tablet {
+        .wrapper {
+            .button {
+                margin-top: 50px;
+            }
+        }
+    }
+
+    @include mobile {
+        background-size: 100% 422px;
+        background-color: $grey;
+    
+        .wrapper {
+            margin-top: 310px;
+
+            .button {
+                margin-top: 40px;
+            }
+        }
     }
 }

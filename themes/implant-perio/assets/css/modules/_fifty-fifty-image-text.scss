@@ -24,16 +24,18 @@
     .fifty-column {
         padding-top: 100px;
         width: 50%;
-        @include flex(column);
+        @include flex;
         justify-content: center;
         align-items: center;
 
         .inner-content {
             max-width: 524px;
+            margin-bottom: auto;
 
             .image-wrapper {
                 // max-width: 698px;
                 max-height: 414px;
+                height: 80dvh;
                 margin: 0 auto 60px;
     
                 img {

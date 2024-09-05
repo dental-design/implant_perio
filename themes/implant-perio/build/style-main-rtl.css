@@ -210,7 +210,7 @@ a:has(picture) {
   cursor: pointer;
   display: flex;
   align-items: center;
-  font-size: 22px;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   font-weight: 500;
   line-height: 1;
@@ -266,6 +266,16 @@ a:has(picture) {
 .button.transparent-button.black-button:hover {
   background-color: #606c68;
   color: #ffffff;
+}
+@media all and (max-width: 1000px) {
+  .button {
+    font-size: 18px;
+  }
+}
+@media all and (max-width: 600px) {
+  .button {
+    font-size: 16px;
+  }
 }
 
 label {
@@ -2551,6 +2561,9 @@ body.compensate-for-scrollbar {
 .cta-hero .wrapper .text-wrapper {
   width: 40%;
   padding: 60px 40px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .cta-hero .wrapper .text-wrapper .standard-text {
   max-width: 421px;
@@ -2594,8 +2607,6 @@ body.compensate-for-scrollbar {
   .cta-hero .wrapper .text-wrapper {
     width: 35%;
     padding: 100px 70px;
-    display: flex;
-    flex-direction: column;
   }
   .cta-hero .wrapper .image-cta-container {
     width: 65%;
@@ -2848,12 +2859,48 @@ body.compensate-for-scrollbar {
     padding: 95px 120px 120px;
   }
 }
+@media all and (max-width: 1000px) {
+  .full-image-section {
+    min-height: 575px;
+  }
+  .full-image-section .container .wrapper {
+    padding: 60px 40px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .full-image-section {
+    min-height: initial;
+  }
+  .full-image-section .container .wrapper {
+    padding: 60px 30px;
+  }
+}
 
 .full-width-image-banner .wrapper h2 {
   max-width: 744px;
 }
 .full-width-image-banner .wrapper .standard-text {
   max-width: 965px;
+}
+.full-width-image-banner .wrapper .button {
+  margin-top: 60px;
+}
+@media all and (max-width: 1000px) {
+  .full-width-image-banner .wrapper .button {
+    margin-top: 50px;
+  }
+}
+@media all and (max-width: 600px) {
+  .full-width-image-banner {
+    background-size: 100% 422px;
+    background-color: #606c68;
+  }
+  .full-width-image-banner .wrapper {
+    margin-top: 310px;
+  }
+  .full-width-image-banner .wrapper .button {
+    margin-top: 40px;
+  }
 }
 
 .team-member-bios {
@@ -3184,15 +3231,17 @@ body.compensate-for-scrollbar {
   padding-top: 100px;
   width: 50%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .fifty-fifty-section .fifty-column .inner-content {
   max-width: 524px;
+  margin-bottom: auto;
 }
 .fifty-fifty-section .fifty-column .inner-content .image-wrapper {
   max-height: 414px;
+  height: 80dvh;
   margin: 0 auto 60px;
 }
 .fifty-fifty-section .fifty-column .inner-content .image-wrapper img {
@@ -3216,6 +3265,15 @@ body.compensate-for-scrollbar {
   }
   .fifty-fifty-section .fifty-column .inner-content .button {
     margin-top: 50px;
+  }
+}
+
+.reviews-banner .container {
+  padding: 0;
+}
+@media all and (max-width: 600px) {
+  .reviews-banner {
+    padding: 30px;
   }
 }
 
