@@ -1,0 +1,12 @@
+.fees-table {
+    border-bottom: 1px solid $grey;
+    
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    .asterisk-text {
+        margin-top: 60px;
+        width: 90%;
+    }
+}

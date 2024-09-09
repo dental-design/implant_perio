@@ -19,16 +19,21 @@
             padding: 100px 0 120px;
             max-width: 795px;
 
-            #footer-form {
+            #footer-form,
+            #referral-form {
                 flex-wrap: wrap;
                 align-items: initial;
 
                 .form-input-left-wrapper {
                     width: calc(35% - 7.5px);
-
-                    select {
-                        &:last-of-type {
+                    
+                    > * {
+                        &:last-child {
                             margin-bottom: 0;
+
+                            input {
+                                margin-bottom: 0;
+                            }
                         }
                     }
                 }

@@ -4,11 +4,11 @@
 
     // Store menu object from CMS
     $menu_items = wp_get_nav_menu_items('Main Menu');
-    
+
     // Create empty variables for menu items
     $group_1 = [];
     $group_2 = [];
-    
+
     // Initialize the index variable
     $index = 0;
 
@@ -23,15 +23,19 @@
     foreach ($menu_items as $item) {
         if ($item->menu_item_parent == 0) {
             if ($index < 3) {
+
                 $group_1[$item->ID] = [
                     'item' => $item,
                     'children' => [],
                 ];
+
             } else {
+
                 $group_2[$item->ID] = [
                     'item' => $item,
                     'children' => [],
                 ];
+
             }
             $index++;
         } else {
@@ -39,14 +43,37 @@
             // Add child items to the appropriate parent group
             add_child_to_group($group_1, $item->menu_item_parent, $item);
             add_child_to_group($group_2, $item->menu_item_parent, $item);
+
         }
     }
 
+    // Function to check if the current menu item or its children is the current page
+    function is_active_menu_item($parent, $current_page_id) {
+        if ($parent['item']->object_id == $current_page_id) {
+            return true;
+        }
+
+        foreach ($parent['children'] as $child) {
+            if ($child->object_id == $current_page_id) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     // Function to call the nav items later in the code
-    function callNavItems($group) { ?>
-        <?php foreach($group as $parent) : ?>
+    function callNavItems($group) {
+        $current_page_id = get_the_ID(); // Get current page ID
+        ?>
+
+        <?php 
+        foreach($group as $parent) : 
+
+        $active_class = is_active_menu_item($parent, $current_page_id) ? 'active' : ''; // Determine if the parent is active
+        ?>
             
-            <li>
+            <li class="<?= $active_class; ?> <?= !empty($parent['children']) ? 'has-children' : 'free'; ?>">
                 <a href="<?= esc_url($parent['item']->url) ?>" class="text-white"><?= esc_html($parent['item']->title) ?></a>
 
                 <?php if (!empty($parent['children'])) : ?>
@@ -65,10 +92,12 @@
         <?php endforeach; ?>
 <?php } ?>
 
-<div class="main-navigation container small">
-    <nav class="flex-row">
 
-        <!-- Left nav group -->
+<div class="main-navigation container small">
+
+    <nav class="flex-row" id="site-nav">
+
+        <!-- left nav group -->
         <ul class="nav-group left-nav flex-row">
             <?php callNavItems($group_1); ?>
         </ul>
@@ -101,7 +130,7 @@
             </a>
         </div>
 
-        <!-- Right nav group -->
+        <!-- right nav group -->
         <ul class="nav-group right-nav flex-row">
             <?php callNavItems($group_2); ?>
         </ul>

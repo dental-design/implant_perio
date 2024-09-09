@@ -34,7 +34,18 @@
     &--not-top {
         .main-navigation {
             nav {
-                padding: 20px 0;
+                .nav-group {
+                    li {
+                        a {
+                            padding: 30px 0;
+                        }
+
+                        .children {
+                            max-width: initial;
+                            padding: 30px 210px;
+                        }
+                    }
+                }
             }
         }
     }

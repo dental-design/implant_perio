@@ -4,8 +4,8 @@
     $asterisk = $args['asterisk_text'];
 ?>
 
-<section class="fees-table bg-grey section">
-    <div class="container small">
+<section class="fees-table section">
+    <div class="container">
 
         <!-- text content -->
         <div class="text-content">
@@ -17,18 +17,16 @@
             <div class="table-wrapper">
                 <table>
                     <thead>
-                        <tr>
+                        <tr class="bg-grey">
                             <th class="large-text semi-bold-text text-white"><strong>Treatments</strong></th>
-                            <th class="large-text semi-bold-text text-white"><strong>Pay as you go fee</strong></th>
-                            <th class="large-text semi-bold-text text-white"><strong>Practice plan</strong></th>
+                            <th width="300" class="large-text semi-bold-text text-white"><strong>Fee (from)</strong></th>
                         </tr>
 
                         <tbody>
                             <?php foreach($table as $row) : ?>
                                 <tr>
-                                    <td class="standard-text"><?= esc_html($row['treatment']) ?></td>
-                                    <td class="standard-text"><?= esc_html($row['pay_as_you_go_fee']) ?></td>
-                                    <td class="standard-text"><?= esc_html($row['practice_plan_fee']) ?></td>
+                                    <td class="standard-text"><?= $row['treatment']; ?></td>
+                                    <td  width="300" class="standard-text"><?= $row['fee']; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -37,6 +35,6 @@
             </div>
         <?php endif; ?>
 
-        <p class="small-text"><?= $asterisk; ?></p>
+        <p class="small-text asterisk-text"><?= $asterisk; ?></p>
     </div>
 </section>

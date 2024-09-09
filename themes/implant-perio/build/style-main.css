@@ -494,23 +494,10 @@ table {
   border-collapse: separate;
   table-layout: fixed;
   border-spacing: 0;
-  border-radius: 14px;
-  border: 3px solid #0a000a;
+  border: 3px solid #606c68;
   overflow: hidden;
   width: 100%;
   background-color: #ffffff;
-}
-table thead th:first-child {
-  border-top-left-radius: 14px;
-}
-table thead th:last-child {
-  border-top-right-radius: 14px;
-}
-table tbody tr:last-child td:first-child {
-  border-bottom-left-radius: 14px;
-}
-table tbody tr:last-child td:last-child {
-  border-bottom-right-radius: 14px;
 }
 table th,
 table td {
@@ -520,10 +507,10 @@ table td {
   line-height: 1.3;
 }
 table th {
-  background-color: #0a000a;
+  background-color: #606c68;
 }
 table td {
-  border: 1px solid #0a000a;
+  border: 1px solid #606c68;
 }
 
 html {
@@ -962,7 +949,7 @@ p a:hover {
   height: 2rem;
   border-radius: 50%;
   display: inline-block;
-  line-height: 1.8rem;
+  line-height: 2;
   color: #0a000a;
   text-align: center;
   margin-right: 1rem;
@@ -1151,8 +1138,12 @@ p a:hover {
 .headroom--pinned {
   transform: translateY(0%);
 }
-.headroom--not-top .main-navigation nav {
-  padding: 20px 0;
+.headroom--not-top .main-navigation nav .nav-group li a {
+  padding: 30px 0;
+}
+.headroom--not-top .main-navigation nav .nav-group li .children {
+  max-width: initial;
+  padding: 30px 210px;
 }
 .headroom--unpinned {
   transform: translateY(-100%);
@@ -2162,6 +2153,22 @@ body.compensate-for-scrollbar {
     max-width: calc(100% - 10px);
   }
 }
+.body-overlay {
+  position: fixed;
+  height: 100dvh;
+  width: 100dvw;
+  background-color: #0a000a;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  opacity: 0;
+  transition: all 0.4s ease-out;
+  pointer-events: none;
+}
+.body-overlay.active-nav {
+  opacity: 0.6;
+}
+
 #footer .footer-section {
   padding: 25px 0;
 }
@@ -2278,13 +2285,10 @@ body.compensate-for-scrollbar {
 }
 
 .main-navigation nav {
-  padding: 45px 0;
   align-items: center;
   justify-content: center;
   transition: padding 0.4s ease-out;
-}
-.main-navigation nav .children {
-  display: none;
+  position: relative;
 }
 .main-navigation nav .home-link-wrapper {
   margin-left: auto;
@@ -2297,6 +2301,12 @@ body.compensate-for-scrollbar {
 .main-navigation nav .home-link-wrapper .home-link:hover svg .green {
   fill: #cff85d;
 }
+.main-navigation nav .nav-group li.active a {
+  color: #cff85d;
+}
+.main-navigation nav .nav-group li.active ul li a {
+  color: #ffffff;
+}
 .main-navigation nav .nav-group li:not(:last-of-type) {
   margin-right: 35px;
 }
@@ -2304,6 +2314,8 @@ body.compensate-for-scrollbar {
   position: relative;
   padding-bottom: 15px;
   padding-top: 15px;
+  padding: 45px 0;
+  display: block;
 }
 .main-navigation nav .nav-group li a::after {
   content: "";
@@ -2330,6 +2342,45 @@ body.compensate-for-scrollbar {
   max-width: 0;
   right: 0;
   left: initial;
+}
+.main-navigation nav .nav-group li a::after {
+  bottom: 2px;
+}
+.main-navigation nav .nav-group li .children {
+  height: 0;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: all 0.4s ease-out;
+  top: calc(100% - 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100dvw;
+  max-width: 1380px;
+  background-color: #606c68;
+  z-index: 2;
+  padding: 60px 210px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px 30px;
+  flex-wrap: wrap;
+  border-top: 2px solid #efefef;
+}
+.main-navigation nav .nav-group li .children li a {
+  padding: 15px 0;
+}
+.main-navigation nav .nav-group li .children li a::after {
+  bottom: 10px;
+}
+.main-navigation nav .nav-group li:hover .children {
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  opacity: 1;
+  pointer-events: all;
 }
 .main-navigation nav .tel-link {
   margin-left: 35px;
@@ -3277,6 +3328,17 @@ body.compensate-for-scrollbar {
   }
 }
 
+.fees-table {
+  border-bottom: 1px solid #606c68;
+}
+.fees-table:last-of-type {
+  border-bottom: none;
+}
+.fees-table .asterisk-text {
+  margin-top: 60px;
+  width: 90%;
+}
+
 .footer-contact-section .image-container {
   width: 33.333%;
   max-width: 640px;
@@ -3295,39 +3357,52 @@ body.compensate-for-scrollbar {
   padding: 100px 0 120px;
   max-width: 795px;
 }
-.footer-contact-section .form-container .form-inner #footer-form {
+.footer-contact-section .form-container .form-inner #footer-form,
+.footer-contact-section .form-container .form-inner #referral-form {
   flex-wrap: wrap;
   align-items: initial;
 }
-.footer-contact-section .form-container .form-inner #footer-form .form-input-left-wrapper {
+.footer-contact-section .form-container .form-inner #footer-form .form-input-left-wrapper,
+.footer-contact-section .form-container .form-inner #referral-form .form-input-left-wrapper {
   width: calc(35% - 7.5px);
 }
-.footer-contact-section .form-container .form-inner #footer-form .form-input-left-wrapper select:last-of-type {
+.footer-contact-section .form-container .form-inner #footer-form .form-input-left-wrapper > *:last-child,
+.footer-contact-section .form-container .form-inner #referral-form .form-input-left-wrapper > *:last-child {
   margin-bottom: 0;
 }
-.footer-contact-section .form-container .form-inner #footer-form .form-textarea-wrapper {
+.footer-contact-section .form-container .form-inner #footer-form .form-input-left-wrapper > *:last-child input,
+.footer-contact-section .form-container .form-inner #referral-form .form-input-left-wrapper > *:last-child input {
+  margin-bottom: 0;
+}
+.footer-contact-section .form-container .form-inner #footer-form .form-textarea-wrapper,
+.footer-contact-section .form-container .form-inner #referral-form .form-textarea-wrapper {
   width: calc(65% - 7.5px);
 }
-.footer-contact-section .form-container .form-inner #footer-form .form-textarea-wrapper textarea {
+.footer-contact-section .form-container .form-inner #footer-form .form-textarea-wrapper textarea,
+.footer-contact-section .form-container .form-inner #referral-form .form-textarea-wrapper textarea {
   width: 100%;
   height: 100%;
 }
-.footer-contact-section .form-container .form-inner #footer-form .checkbox-submit {
+.footer-contact-section .form-container .form-inner #footer-form .checkbox-submit,
+.footer-contact-section .form-container .form-inner #referral-form .checkbox-submit {
   width: 100%;
   margin-top: 40px;
   align-items: center;
 }
-.footer-contact-section .form-container .form-inner #footer-form .checkbox-submit label {
+.footer-contact-section .form-container .form-inner #footer-form .checkbox-submit label,
+.footer-contact-section .form-container .form-inner #referral-form .checkbox-submit label {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.footer-contact-section .form-container .form-inner #footer-form .checkbox-submit label span {
+.footer-contact-section .form-container .form-inner #footer-form .checkbox-submit label span,
+.footer-contact-section .form-container .form-inner #referral-form .checkbox-submit label span {
   vertical-align: middle;
   padding-top: 6px;
   font-size: 14px;
 }
-.footer-contact-section .form-container .form-inner #footer-form .checkbox-submit .button {
+.footer-contact-section .form-container .form-inner #footer-form .checkbox-submit .button,
+.footer-contact-section .form-container .form-inner #referral-form .checkbox-submit .button {
   margin-left: 40px;
 }
 @media all and (min-width: 1600px) {

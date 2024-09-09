@@ -2,8 +2,8 @@
     $textContent = $args['text_content']
 ?>
 
-<section class="asterisk-text">
-    <div class="container large">
+<section class="asterisk-text section">
+    <div class="container small">
 
         <div class="xtra-small-text"><?= $textContent; ?></div>
 

@@ -7,6 +7,7 @@ import GoogleMap from "./modules/GoogleMap";
 import TeamBio from "./modules/TeamBio";
 import FAQ from "./modules/Faqs";
 import Headroom from "./modules/Headroom";
+import MenuHover from "./modules/MenuHover";
 
 // standard function components
 import "./modules/BeforeAfter";
@@ -17,6 +18,7 @@ import "./modules/slick";
 const googleMap = new GoogleMap();
 const teamBio = new TeamBio();
 const faq = new FAQ();
+const menu = new MenuHover();
 
 // call any auxillary functions
 (function() {

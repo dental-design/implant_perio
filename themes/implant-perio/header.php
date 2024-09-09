@@ -27,7 +27,9 @@ global $detect; // used to determine if site is being viewed on a mobile device.
 </head>
 
 <body <?php body_class(); ?>>
-    <div class="body-overlay"></div>
+
+    <!-- nav overlay -->
+    <div class="body-overlay" id="#nav-overlay"></div>
 
     <!-- navigation -->
     <section class="navigation-section bg-grey headroom-nav">

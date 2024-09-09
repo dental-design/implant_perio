@@ -6,20 +6,24 @@
 ?>
 
 <section class="standard-text-container section">
-    <div class="container <?= $textOrientation ? 'center-text small' : 'left-align large'; ?> ">
+    <?php if (!empty($heading)) : ?>
+        <div class="container <?= $textOrientation ? 'center-text small' : 'left-align large'; ?> ">
 
-        <!-- heading -->
-        <h2 class="main-heading add-margin"><?= $heading; ?></h2>
+            <!-- heading -->
+            <h2 class="main-heading <?= (!empty($textContent)) || (!empty($largeText)) ? 'add-margin' : ''; ?>"><?= $heading; ?></h2>
 
-    </div>
+        </div>
+    <?php endif; ?>
 
-    <div class="container <?= $textOrientation ? 'xtra-small' : 'large'; ?>">
+    <?php if ((!empty($textContent)) || (!empty($largeText))) : ?>
+        <div class="container <?= $textOrientation ? 'center-text small' : 'large'; ?>">
 
-        <!-- large text -->
-        <p class="xtra-large-text"><?= $largeText ?></p>
+            <!-- large text -->
+            <p class="xtra-large-text <?= !empty($textContent) ? 'add-margin' : '' ?>"><?= $largeText ?></p>
 
-        <!-- standard text content -->
-        <div class="standard-text"><?= $textContent; ?></div>
+            <!-- standard text content -->
+            <div class="standard-text"><?= $textContent; ?></div>
 
-    </div>
+        </div>
+    <?php endif; ?>
 </section>

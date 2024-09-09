@@ -10,12 +10,12 @@
 
         <!-- heading -->
         <?php if ($heading) : ?>
-            <h2 class="center-text add-margin"><?= $heading; ?></h2>
+            <h2 class="center-text text-white main-heading add-margin large"><?= $heading; ?></h2>
         <?php endif; ?>
 
         <!-- text content -->
         <?php if ($textContent) : ?>
-            <p class="center-text large-text"><?= $textContent; ?></p>
+            <p class="center-text text-white standard-text add-margin"><?= $textContent; ?></p>
         <?php endif; ?>
 
         <!-- iframe -->

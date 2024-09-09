@@ -6,14 +6,10 @@
 
 .main-navigation {
     nav {
-        padding: 45px 0;
         align-items: center;
         justify-content: center;
         transition: padding .4s ease-out;
-
-        .children {
-            display: none;
-        }
+        position: relative;
 
         .home-link-wrapper {
             margin-left: auto;
@@ -39,12 +35,74 @@
         
         .nav-group {
             li {
+                &.active {
+                    a {
+                        color: $green;
+                    }
+
+                    ul {
+                        li {
+                            a {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+
                 &:not(:last-of-type) {
                     margin-right: 35px;
                 }
 
                 a {
                     @include anchorHover($white, 2px);
+                    padding: 45px 0;
+                    display: block;
+
+                    &::after {
+                        bottom: 2px;
+                    }
+                }
+
+                // main styling in _menu partial
+                .children {
+                    height: 0;
+                    max-height: 0;
+                    opacity: 0;
+                    pointer-events: none;
+                    position: absolute;
+                    transition: all .4s ease-out;
+                    top: calc(100% - 2px);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 100dvw;
+                    max-width: 1380px;
+                    background-color: $grey;
+                    z-index: 2;
+                    padding: 60px 210px;
+                    @include flex;
+                    justify-content: center;
+                    gap: 15px 30px;
+                    flex-wrap: wrap;
+                    border-top: 2px solid $light-grey;
+
+                    li {
+                        a {
+                            padding: 15px 0;
+
+                            &::after {
+                                bottom: 10px;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    .children {
+                        height: fit-content;
+                        max-height: fit-content;
+                        opacity: 1;
+                        pointer-events: all;
+                    }
                 }
             }
         }

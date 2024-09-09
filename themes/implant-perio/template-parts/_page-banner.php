@@ -90,7 +90,7 @@
 
                             <?php foreach (get_field('page_links') as $post) : setup_postdata($post); ?>
 
-                                <a href="<?= esc_url(the_permalink()); ?>" class="button transparent-button page-banner-links-button text-white"><?= !empty(get_field('listing_title')) ? get_field('listing_title') : get_the_title(); ?></a>
+                                <a href="<?= esc_url(get_permalink()); ?>" class="button transparent-button page-banner-links-button text-white"><?= !empty(get_field('listing_title')) ? get_field('listing_title') : get_the_title(); ?></a>
 
                             <?php 
                                 endforeach; 
