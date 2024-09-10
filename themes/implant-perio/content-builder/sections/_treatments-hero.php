@@ -18,10 +18,12 @@
     <section class="treatments-hero <?= $background ? 'bg-medium-grey' : 'bg-grey'; ?>">
         <div class="wrapper flex-row">
 
-            <!-- image -->
-            <div class="image-container">
-                <img data-source="<?= esc_url(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')); ?>" alt="<?= esc_attr(!empty($image['alt']) ? $image['alt'] : 'treatments hero side bar image'); ?>" height="365" width="480" />
-            </div>
+            <!-- image - don't load in on mobile -->
+            <?php if (!$detect) : ?>
+                <div class="image-container">
+                    <img data-source="<?= esc_url(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')); ?>" alt="<?= esc_attr(!empty($image['alt']) ? $image['alt'] : 'treatments hero side bar image'); ?>" height="365" width="480" />
+                </div>
+            <?php endif; ?>
 
             <!-- treatments -->
             <div class="treatments <?= $background ? 'bg-medium-grey' : 'bg-grey'; ?>">

@@ -62,4 +62,26 @@
             }
         }
     }
+
+    @media all and (max-width: 1100px) {
+        padding-top: 0;
+        
+        .wrapper {
+            flex-direction: column;
+
+            .text-wrapper,
+            .image-cta-container {
+                width: 100%;
+
+                .standard-text {
+                    width: 100%;
+                    max-width: initial;
+                }
+            }
+
+            .text-wrapper {
+                background-color: $grey;
+            }
+        }
+    }
 }

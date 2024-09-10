@@ -115,6 +115,7 @@
 .cta-button {
     align-items: center;
     max-width: max-content;
+    gap: 20px;
 
     &.text-white {
         .cta-text {
@@ -135,9 +136,10 @@
     }
     
     .cta-arrow {
-        margin-left: 20px;
         height: 90px;
         width: 90px;
+        min-height: 90px;
+        min-width: 90px;
         position: relative;
         border-radius: 50%;
 
@@ -159,6 +161,42 @@
             svg {
                 margin-left: 8px;
             }
+        }
+    }
+
+    @include laptop {
+        .cta-text {
+            font-size: 40px;
+        }
+        
+        .cta-arrow {
+            height: 80px;
+            width: 80px;
+            min-height: 80px;
+            min-width: 80px;
+        }
+    }
+
+    @include tablet {
+        .cta-text {
+            font-size: 38px;
+        }
+    }
+
+    @include mobile {
+        flex-direction: column;
+
+        .cta-text {
+            font-size: 36px;
+            border: none;
+            max-width: 296px;
+        }
+        
+        .cta-arrow {
+            height: 67px;
+            width: 67px;
+            min-height: 67px;
+            min-width: 67px;
         }
     }
 }

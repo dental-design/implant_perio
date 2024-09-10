@@ -1199,6 +1199,7 @@ p a:hover {
   align-items: center;
   max-width: -moz-max-content;
   max-width: max-content;
+  gap: 20px;
 }
 .cta-button.text-white .cta-text {
   border-color: #ffffff;
@@ -1212,9 +1213,10 @@ p a:hover {
   font-size: 46px;
 }
 .cta-button .cta-arrow {
-  margin-right: 20px;
   height: 90px;
   width: 90px;
+  min-height: 90px;
+  min-width: 90px;
   position: relative;
   border-radius: 50%;
 }
@@ -1230,6 +1232,38 @@ p a:hover {
 }
 .cta-button:hover .cta-arrow svg {
   margin-right: 8px;
+}
+@media all and (max-width: 1440px) {
+  .cta-button .cta-text {
+    font-size: 40px;
+  }
+  .cta-button .cta-arrow {
+    height: 80px;
+    width: 80px;
+    min-height: 80px;
+    min-width: 80px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .cta-button .cta-text {
+    font-size: 38px;
+  }
+}
+@media all and (max-width: 600px) {
+  .cta-button {
+    flex-direction: column;
+  }
+  .cta-button .cta-text {
+    font-size: 36px;
+    border: none;
+    max-width: 296px;
+  }
+  .cta-button .cta-arrow {
+    height: 67px;
+    width: 67px;
+    min-height: 67px;
+    min-width: 67px;
+  }
 }
 
 .circle {
@@ -2651,6 +2685,10 @@ body.compensate-for-scrollbar {
     max-width: 120px;
     height: auto;
   }
+  .page-banner .hero-container {
+    padding-bottom: 50px;
+    padding-top: 10px;
+  }
 }
 @media all and (max-width: 600px) {
   .page-banner .banner-image-wrapper {
@@ -2843,6 +2881,78 @@ body.compensate-for-scrollbar {
     font-size: 38px;
   }
 }
+@media all and (max-width: 1100px) {
+  .image-text-columns .wrapper .heading-container {
+    width: 15%;
+  }
+  .image-text-columns .wrapper .image-container {
+    width: 35%;
+  }
+  .image-text-columns .wrapper .text-container {
+    padding: 60px 30px;
+    width: 50%;
+  }
+  .image-text-columns .wrapper .text-container .text-wrapper {
+    max-width: 550px;
+  }
+}
+@media all and (max-width: 720px) {
+  .image-text-columns::before {
+    display: none;
+  }
+  .image-text-columns .wrapper {
+    flex-direction: column;
+  }
+  .image-text-columns .wrapper .heading-container,
+  .image-text-columns .wrapper .image-container,
+  .image-text-columns .wrapper .text-container {
+    width: 100%;
+    max-width: initial;
+  }
+  .image-text-columns .wrapper .image-container {
+    height: 50dvw;
+    min-height: 350px;
+    order: 1;
+  }
+  .image-text-columns .wrapper .heading-container {
+    order: 2;
+    background-color: #606c68;
+    padding: 40px 30px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .image-text-columns .wrapper .heading-container .heading-content {
+    position: relative;
+    right: initial;
+    top: initial;
+    transform: translateY(0);
+    text-align: center;
+  }
+  .image-text-columns .wrapper .heading-container .heading-content h2 {
+    font-size: 36px;
+  }
+  .image-text-columns .wrapper .heading-container .heading-content .plus-container {
+    position: absolute;
+    top: -60px;
+    right: 50%;
+    transform: translateX(50%);
+    margin: 0;
+    width: 40px;
+    height: 40px;
+  }
+  .image-text-columns .wrapper .heading-container .heading-content .plus-container::before, .image-text-columns .wrapper .heading-container .heading-content .plus-container::after {
+    height: 8px;
+  }
+  .image-text-columns .wrapper .text-container {
+    order: 3;
+  }
+  .image-text-columns .wrapper .text-container .text-wrapper {
+    margin: 0 auto;
+  }
+}
 
 .cta-hero {
   padding-top: 120px;
@@ -2901,6 +3011,26 @@ body.compensate-for-scrollbar {
     width: 65%;
   }
 }
+@media all and (max-width: 1100px) {
+  .cta-hero {
+    padding-top: 0;
+  }
+  .cta-hero .wrapper {
+    flex-direction: column;
+  }
+  .cta-hero .wrapper .text-wrapper,
+  .cta-hero .wrapper .image-cta-container {
+    width: 100%;
+  }
+  .cta-hero .wrapper .text-wrapper .standard-text,
+  .cta-hero .wrapper .image-cta-container .standard-text {
+    width: 100%;
+    max-width: initial;
+  }
+  .cta-hero .wrapper .text-wrapper {
+    background-color: #606c68;
+  }
+}
 
 .treatments-hero .image-container {
   width: 33.333%;
@@ -2914,18 +3044,22 @@ body.compensate-for-scrollbar {
      object-fit: cover;
 }
 .treatments-hero .treatments {
-  width: 66.666%;
-  padding-right: 80px;
+  max-width: 66.666%;
+  width: calc(100% - 640px);
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .treatments-hero .treatments .treatments-inner {
   width: 100%;
-  max-width: 795px;
   align-items: center;
+  gap: 40px;
   justify-content: space-between;
+  padding: 20px 0;
+  max-width: 980px;
+  margin: 0 auto;
 }
 .treatments-hero .treatments .treatments-inner .treatment-card {
   max-width: 190px;
@@ -2947,11 +3081,32 @@ body.compensate-for-scrollbar {
   .treatments-hero .image-container {
     max-width: 427px;
   }
+  .treatments-hero .treatments {
+    width: calc(100% - 427px);
+  }
 }
-@media all and (min-width: 1600px) {
+@media all and (max-width: 1200px) {
+  .treatments-hero .image-container {
+    display: none;
+  }
+  .treatments-hero .treatments {
+    padding: 60px 0;
+    width: 100%;
+  }
   .treatments-hero .treatments .treatments-inner {
-    max-width: 1058px;
-    padding-left: 40px;
+    padding: 0;
+  }
+}
+@media all and (max-width: 700px) {
+  .treatments-hero .treatments .treatments-inner {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .treatments-hero .treatments .treatments-inner .treatment-card {
+    background-color: rgba(96, 108, 104, 0.2);
+    padding: 60px 20px;
+    width: 100dvw;
+    max-width: 290px;
   }
 }
 

@@ -12,17 +12,21 @@
     }
 
     .treatments {
-        width: 66.666%;
-        padding-left: 80px;
+        max-width: 66.666%;
+        width: calc(100% - 640px);
+        margin: 0 auto;
         @include flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-between;
 
         .treatments-inner {
             width: 100%;
-            max-width: 795px; // 1058 on large screens
             align-items: center;
+            gap: 40px;
             justify-content: space-between;
+            padding: 20px 0;
+            max-width: 980px;
+            margin: 0 auto;
 
             .treatment-card {
                 max-width: 190px;
@@ -53,13 +57,39 @@
         .image-container {
             max-width: 427px;
         }
+
+        .treatments {
+            width: calc(100% - 427px);
+        }
     }
 
-    @media all and (min-width: 1600px) {
+    @media all and (max-width: 1200px) {
+        .image-container {
+            display: none;
+        }
+
+        .treatments {
+            padding: 60px 0;
+            width: 100%;
+
+            .treatments-inner {
+                padding: 0;
+            }
+        }
+    }
+
+    @media all and (max-width: 700px) {
         .treatments {
             .treatments-inner {
-                max-width: 1058px; 
-                padding-right: 40px;
+                flex-direction: column;
+                justify-content: center;
+
+                .treatment-card {
+                    background-color: rgba($grey, .2);
+                    padding: 60px 20px;
+                    width: 100dvw;
+                    max-width: 290px;
+                }
             }
         }
     }
