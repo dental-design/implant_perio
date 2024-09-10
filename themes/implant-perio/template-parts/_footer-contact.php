@@ -15,10 +15,12 @@
 <section class="footer-contact-section">
     <div class="wrapper flex-row">
 
-        <!-- image -->
-        <div class="image-container">
-            <img src="<?= esc_attr(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')); ?>" alt="Contact form image" height="670" width="480" />
-        </div>
+        <!-- image - don't load on mobile -->
+        <?php if (!$detect) : ?>
+            <div class="image-container">
+                <img src="<?= esc_attr(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')); ?>" alt="Contact form image" height="670" width="480" />
+            </div>
+        <?php endif; ?>
 
         <!-- contact form -->
         <div class="form-container">
@@ -29,13 +31,11 @@
                 <div class="form-wrapper">
                     
                     <!-- check for referral page - else show standard form -->
-                    <?php 
-                        if (is_page(524)) {
-                            get_template_part('template-parts/_referral-form');
-                        } else {
-                            get_template_part('template-parts/_contact-form');
-                        } 
-                    ?>
+                    <?php if (is_page(524)) {
+                        get_template_part('template-parts/_referral-form');
+                    } else {
+                        get_template_part('template-parts/_contact-form');
+                    } ?>
 
                 </div>
             </div>

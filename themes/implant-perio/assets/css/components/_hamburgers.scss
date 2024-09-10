@@ -1,0 +1,109 @@
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+	padding: 0;
+	display: none;
+	cursor: pointer;
+	transition-property: all, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+	background-color: transparent;
+	padding: 0;
+	position: relative;
+	z-index: 3;
+	background-color: $green;
+	align-items: center;
+	justify-content: center;
+	min-width: 75px;
+
+	@include tablet {
+		display: flex;
+	}
+
+    @media all and (max-width: 400px) {
+		min-width: 50px;
+    }
+}
+
+.hamburger-box {
+	width: 28px;
+	height: 30px;
+	display: inline-block;
+	position: relative;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px;
+}
+
+.hamburger-box,
+.hamburger-inner {
+	pointer-events: none;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+	width: 28px;
+	height: 5px;
+	background-color: $grey;
+	position: absolute;
+	transition: all .15s ease;
+	right: 0;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+	content: "";
+	display: block;
+	left: initial;
+}
+
+.hamburger.is-active {
+	.hamburger-inner,
+	.hamburger-inner::before,
+	.hamburger-inner::after {
+		width: 28px;
+	}
+}
+
+.hamburger--slider .hamburger-inner {
+	top: 2px;
+}
+
+.hamburger--slider .hamburger-inner::before {
+	top: 12.5px;
+	transition-property: transform, opacity;
+	transition-timing-function: ease;
+	transition-duration: 0.15s;
+}
+
+.hamburger--slider .hamburger-inner::after {
+	top: 25px;
+}
+
+.hamburger--slider.is-active .hamburger-inner {
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--slider.is-active .hamburger-inner::before {
+	transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+	opacity: 0;
+}
+
+.hamburger--slider.is-active .hamburger-inner::after {
+	transform: translate3d(0, -20px, 0) rotate(-90deg);
+}

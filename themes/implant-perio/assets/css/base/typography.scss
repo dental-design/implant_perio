@@ -357,6 +357,18 @@ p {
 	&.small {
 		margin-bottom: 20px;
 	}
+
+	@include tablet {
+		&.large {
+			margin-bottom: 50px;
+		}
+	}
+
+	@include mobile {
+		&.large {
+			margin-bottom: 40px;
+		}
+	}
 }
 
 // text colours

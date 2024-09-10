@@ -33,7 +33,16 @@ global $detect; // used to determine if site is being viewed on a mobile device.
 
     <!-- navigation -->
     <section class="navigation-section bg-grey headroom-nav">
+
+        <!-- nav -->
         <?php get_template_part('template-parts/_navigation'); ?>
+
+        <!-- hamburger -->
+        <div id="hamburger" class="hamburger hamburger--slider">
+            <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+            </div>
+        </div>
     </section>
 
     <!-- page banner -->

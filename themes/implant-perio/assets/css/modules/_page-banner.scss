@@ -13,9 +13,17 @@
         z-index: 1;
     }
 
-    .banner-image {
+    .banner-image-wrapper {
         position: relative;
         z-index: 2;
+
+        .banner-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
 
         &::after {
             content: '';
@@ -41,19 +49,20 @@
             .page-links-wrapper {
                 justify-content: center;
                 align-items: center;
-
-                .button {
-                    &:not(:last-of-type) {
-                        margin-right: 20px;
-                    }
-                }
+                gap: 20px;
             }
         }
     }
 
     .hero-container {
         padding-bottom: 60px;
-        
+
+        h2 {
+            max-width: 840px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .cta-button {
             margin: 0 auto;
             font-size: 46px;
@@ -73,6 +82,76 @@
                     @include flex;
                     justify-content: center;
                     min-width: 311px;
+                }
+            }
+        }
+    }
+
+    @include tablet {
+        &::before {
+            display: none;
+        }
+
+        .banner-image-wrapper {
+            .image-banner-text-content {
+                padding: 80px 0 100px;
+    
+                .site-logo {
+                    svg {
+                        max-width: 120px;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        .banner-image-wrapper {
+            padding: 0;
+            background-color: $grey;
+
+            &::after {
+                display: none;
+            }
+
+            .banner-image {
+                position: relative;
+                height: 50dvw;
+                min-height: 289px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: $black;
+                    opacity: .6;
+                    z-index: 1;
+                }
+            }
+
+            .image-banner-text-content {
+                padding: 60px 30px 70px;
+    
+                .site-logo {
+                    svg {
+                        max-width: 70px;
+                    }
+                }
+
+                .page-links-wrapper {
+                    flex-direction: column;
+
+                    .button {
+                        width: 100%;
+                        max-width: 264px;
+                        @include flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
                 }
             }
         }

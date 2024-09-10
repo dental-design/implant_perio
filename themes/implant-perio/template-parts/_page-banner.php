@@ -15,7 +15,7 @@
 ?>
 
 <section class="page-banner bg-medium-grey">
-    <div class="banner-image bg-image container add-margin large" style="background-image: url('<?= esc_attr(has_post_thumbnail() ? wp_get_attachment_image_url($image, $image_size) : get_theme_file_uri('assets/images/default-image.jpg')) ?>');">
+    <div class="banner-image-wrapper container add-margin large" >
         <div class="image-banner-text-content center-text">
 
             <!-- site-logo -->
@@ -59,6 +59,8 @@
                 <?php if (function_exists('custom_breadcrumbs')) custom_breadcrumbs(); ?>
             <?php endif; ?>
         </div>
+
+        <div class="banner-image bg-image" style="background-image: url('<?= esc_attr(has_post_thumbnail() ? wp_get_attachment_image_url($image, $image_size) : get_theme_file_uri('assets/images/default-image.jpg')) ?>');"></div>
     </div>
 
     <!-- hero content -->
@@ -88,14 +90,11 @@
                     <?php if (!empty(get_field('page_links'))) : ?>
                         <div class="page-links-wrapper flex-row">
 
-                            <?php foreach (get_field('page_links') as $post) : setup_postdata($post); ?>
+                            <?php foreach (get_field('page_links') as $block) : ?>
 
-                                <a href="<?= esc_url(get_permalink()); ?>" class="button transparent-button page-banner-links-button text-white"><?= !empty(get_field('listing_title')) ? get_field('listing_title') : get_the_title(); ?></a>
+                                <a href="<?= esc_url($block['button']['url']); ?>" class="button transparent-button page-banner-links-button text-white"><?= $block['button']['title']; ?></a>
 
-                            <?php 
-                                endforeach; 
-                                wp_reset_postdata();
-                            ?>
+                            <?php endforeach; ?>
 
                         </div>
                     <?php endif; ?>

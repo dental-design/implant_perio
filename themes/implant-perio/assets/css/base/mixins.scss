@@ -1,3 +1,9 @@
+@mixin small-screen {
+	@media all and (max-width: 450px) {
+		@content;
+	}
+}
+
 @mixin mobile {
 	@media all and (max-width: 600px) {
 		@content;

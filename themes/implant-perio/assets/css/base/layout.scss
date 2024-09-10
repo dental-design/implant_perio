@@ -80,10 +80,6 @@ main {
 		padding-bottom: 0;
 	}
 
-	&.add-margin {
-		margin-bottom: 60px;
-	}
-
 	@include tablet {
 		padding: 50px 0;
 
@@ -97,10 +93,6 @@ main {
 
 		&.large-bottom {
 			padding-bottom: 80px;
-		}
-
-		&.add-margin {
-			margin-bottom: 50px;
 		}
 	}
 
@@ -125,10 +117,6 @@ main {
 
 		&.large-bottom {
 			padding-bottom: 40px;
-		}
-
-		&.add-margin {
-			margin-bottom: 40px;
 		}
 	}
 }
@@ -191,6 +179,10 @@ main {
 
 .bg-grey {
 	background-color: $grey;
+}
+
+.bg-dark-green {
+	background-color: $dark-green;
 }
 
 .bg-medium-grey {

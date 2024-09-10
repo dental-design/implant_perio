@@ -95,6 +95,11 @@
 
 <div class="main-navigation container small">
 
+    <!-- mobile nav header container -->
+    <div class="mobile-only homepage-link-wrapper bg-dark-green">
+        <a href="<?= site_url(); ?>" class="text-white large-text mobile-home-link" aria-label="<?= get_bloginfo('title'); ?> mobile homepage link">Implant <span class="text-green">+</span> Perio<span class="small-screen-hide"> Clinic</span></a>
+    </div>
+
     <nav class="flex-row" id="site-nav">
 
         <!-- left nav group -->
