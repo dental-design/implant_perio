@@ -11,7 +11,7 @@ h2 {
 	font-family: $base-font-family;
 	font-size: modular-scale(1);
 	line-height: 1.2;
-	font-weight: 400;
+	font-weight: 300;
 	font-style: normal;
 	color: $grey;
 	letter-spacing: 1px;
@@ -56,6 +56,10 @@ h2 {
 	@include tablet {
 		font-size: 28px;
 
+		&.main-heading {
+			font-size: 42px;
+		}
+
 		&.team-heading {
 			font-size: 26px;
 		}
@@ -66,6 +70,10 @@ h2 {
 
 		&.team-heading {
 			font-size: 22px;
+		}
+
+		&.main-heading {
+			font-size: 36px;
 		}
 	}
 }

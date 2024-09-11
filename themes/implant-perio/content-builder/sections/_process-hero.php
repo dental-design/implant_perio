@@ -19,8 +19,8 @@
 <section class="process-hero section large-bottom">
     <div class="container xtra">
 
-        <!-- images -->
-        <?php if (!empty($images)) : ?>
+        <!-- images - don't load on mobile -->
+        <?php if (!empty($images) && !$detect) : ?>
             <div class="image-container flex-row">
 
                 <?php foreach($images as $image) : ?>

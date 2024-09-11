@@ -1,5 +1,26 @@
 .map-section {
+    overflow: hidden;
+
     .wrapper {
+        .contact-info {
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid $green;
+
+            &.mobile-contact-info {
+                display: none;
+            }
+
+            .info-link {
+                display: block;
+                margin-bottom: 5px;
+
+                &:hover {
+                    color: $green;
+                }
+            }
+        }
+
         .info-wrapper {
             width: 40%;
             padding: 60px;
@@ -10,21 +31,9 @@
                 margin: auto;
             }
 
-            .contact-info {
-                padding-bottom: 40px;
-                margin-bottom: 40px;
-                border-bottom: 3px solid $green;
-
-                .info-link {
-                    display: block;
-
-                    &:hover {
-                        color: $green;
-                    }
-                }
-            }
-
             .opening-times {
+                padding-top: 40px;
+
                 .special-hours {
                     margin-top: 40px;
                 }
@@ -75,6 +84,94 @@
 
                 .cta-button {
                     font-size: 50px;
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 1100px) {
+        .wrapper {
+            .info-wrapper {
+                padding: 40px;
+
+                .opening-times {
+                    .hours-container {
+                        .days-column {
+                            margin-right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 900px) {
+        padding-bottom: 0;
+
+        .container {
+            padding: 0;
+        }
+        .wrapper {
+            flex-direction: column-reverse;
+
+            .contact-info {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border: none;
+                display: none;
+    
+                &.mobile-contact-info {
+                    display: block;
+                }
+            }
+
+            .info-wrapper,
+            .map-wrapper {
+                width: 100%;
+                max-width: initial;
+            }
+
+            .info-wrapper {
+                padding: 40px 30px;
+
+                .opening-times {
+                    padding-top: 0;
+                    
+                    .standard-hours,
+                    h2 {
+                        max-width: 320px;
+                        margin: 0 auto;
+                    }
+
+                    h2 {
+                        margin-bottom: 30px;
+                    }
+
+                    .hours-container {
+                        .days-column {
+                            margin-right: 0;
+                            border: none;
+                        }
+                    }
+                }
+            }
+
+            .map-wrapper {
+                margin: 0 auto;
+                width: calc(100% - 60px);
+
+                .acf-map {
+                    height: 50dvw;
+                    min-height: 390px; 
+                }
+
+                .cta-button-wrapper {
+                    position: relative;
+                    
+                    .cta-button {
+                        margin: 40px auto 0;
+                        row-gap: 0;
+                    }
                 }
             }
         }

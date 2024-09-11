@@ -37,7 +37,7 @@
 
             <!-- contact information -->
             <div class="info-wrapper bg-grey">
-                <div class="contact-info">
+                <div class="contact-info desktop-contact-info">
                     <h2 class="text-white add-margin">Visit us</h2>
 
                     <!-- address - global acf -->
@@ -78,7 +78,22 @@
                 </div>
 
                 <!-- get directions button - functions.php shortcode -->
-                <div class="cta-button-wrapper">
+                <div class="cta-button-wrapper mobile-content-wrapper">
+                    
+                    <!-- content - hide on mobile - duplicated from above to fit mobile design -->
+                    <div class="contact-info mobile-contact-info center-text">
+                        <h2 class="add-margin">Visit us</h2>
+
+                        <!-- address - global acf -->
+                        <p class="standard-text address add-margin"><?= $address ?></p>
+
+                        <!-- email address - global acf -->
+                        <a aria-label="practice contact email address" class="info-link standard-text" href="mailto:<?= $email; ?>"><?= $email; ?></a>
+
+                        <!-- telephone number - global acf -->
+                        <a aria-label="practice telephone number" class="info-link standard-text" href="tel:<?= str_replace(' ', '', $telephone); ?>"><?= $telephone; ?></a>
+                    </div>
+
                     <?php custom_cta_button('Get directions', 'https://www.google.com/maps?q=' . $mapLocation['lat'] . ',' . $mapLocation['lng'], 'get-directions'); ?>
                 </div>
             </div>

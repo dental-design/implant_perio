@@ -103,4 +103,113 @@
             }
         }
     }
+
+    @media all and (max-width: 1300px) {
+        .wrapper {
+            .main-content {
+                .big {
+                    padding: 60px 40px;
+                }
+
+                .bottom-content {
+                    .text-container {
+                        padding: 60px 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include tablet {
+        .wrapper {
+            flex-direction: column;
+
+            .sidebar {
+                width: 100%;
+                padding: 60px 30px 40px;
+
+                .sidebar-text {
+                    display: inline-block;
+                    transform: rotate(0);
+                    white-space: initial;
+                    margin-bottom: auto;
+                    margin-top: 0;
+                }
+            }
+
+            .main-content {
+                width: 100%;
+                max-width: initial;
+
+                .big {
+                    width: 100%;
+                    max-width: initial;
+                }
+                
+                .top-content {
+                    flex-direction: column;
+
+                    .slider-container {
+                        padding: 0 30px 60px;
+                        width: 100%;
+
+                        .image-slide {
+                            height: 80dvw;
+                            max-height: 391px;
+                            min-height: 360px;
+                        }
+                    }
+                }
+
+                .text-container {
+                    .text-container-inner {
+                        margin: 0 auto;
+                    }
+                }
+
+                .bottom-content {
+                    .big,
+                    .small {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 860px) {
+        .wrapper {
+            .main-content {
+                .bottom-content {
+                    flex-direction: column;
+
+                    .big,
+                    .small {
+                        width: 100%;
+                        text-align: center;
+
+                        .image-wrapper {
+                            margin: 0 auto 30px;
+                        }
+
+                        .button {
+                            max-width: initial;
+                            width: 100%;
+                            @include flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+
+                    .text-container {
+                        .text-container-inner {
+                            h2 {
+                                font-size: 36px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

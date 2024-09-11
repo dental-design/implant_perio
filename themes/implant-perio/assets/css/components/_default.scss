@@ -199,6 +199,16 @@
             min-width: 67px;
         }
     }
+
+    @include mobile {
+        flex-direction: column;
+
+        .cta-text {
+            font-size: 28px;
+            border: none;
+            max-width: auto;
+        }
+    }
 }
 
 // icon and counter button backgrounds
@@ -237,6 +247,45 @@
         font-size: 50px;
         font-weight: 500;
         color: $grey;
+    }
+
+    @include tablet {
+        height: 65px;
+        width: 65px;
+        min-height: 65px;
+        min-width: 65px;
+        margin-right: 20px;
+    
+        &.small {
+            height: 55px;
+            width: 55px;
+            min-height: 55px;
+            min-width: 55px;
+    
+            img {
+                max-width: 34px;
+                max-height: 34px;
+            }
+        }
+    
+        img {
+            max-width: 64px;
+            max-height: 48px;
+            height: auto;
+            width: auto;
+        }
+    
+        p {
+            font-size: 42px;
+        }
+    }
+
+    @include mobile {
+        margin-right: 0;
+    
+        p {
+            font-size: 30px;
+        }
     }
 }
 
