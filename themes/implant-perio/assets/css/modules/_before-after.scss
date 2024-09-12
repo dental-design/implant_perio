@@ -74,4 +74,16 @@
             }
         }
     }
+
+    @media all and (max-width: 1100px) {
+
+        .wrapper {
+            .image-cta-container {
+                .image-wrapper {
+                    max-height: 547px;
+                    height: 80dvw;
+                }
+            }
+        }
+    }
 }

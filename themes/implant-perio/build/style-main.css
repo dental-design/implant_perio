@@ -792,20 +792,31 @@ h3.question {
   font-size: 34px;
   font-weight: 500;
 }
+@media all and (max-width: 1440px) {
+  h3.question {
+    font-size: 28px;
+  }
+}
 @media all and (max-width: 1000px) {
   h3 {
-    font-size: 20px;
+    font-size: 26px;
   }
   h3.large {
     font-size: 28px;
   }
+  h3.question {
+    font-size: 26px;
+  }
 }
 @media all and (max-width: 600px) {
   h3 {
-    font-size: 18px;
+    font-size: 22px;
   }
   h3.large {
     font-size: 24px;
+  }
+  h3.question {
+    font-size: 22px;
   }
 }
 
@@ -820,7 +831,7 @@ a {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  color: #0a000a;
+  color: #606c68;
   transition: all 0.4s ease-in-out;
 }
 @media all and (max-width: 1000px) {
@@ -1148,7 +1159,7 @@ p a:hover {
   transition: all 200ms linear;
 }
 .headroom--pinned {
-  transform: translateY(0%);
+  transform: translateY(-100%);
 }
 .headroom--not-top .main-navigation nav .nav-group li a {
   padding: 30px 0;
@@ -1157,8 +1168,8 @@ p a:hover {
   max-width: initial;
   padding: 30px 210px;
 }
-.headroom--unpinned {
-  transform: translateY(-100%);
+.headroom--unpinned, .headroom--top {
+  transform: translateY(0);
 }
 
 #map-marker {
@@ -1341,7 +1352,7 @@ p a:hover {
     max-height: 34px;
   }
   .circle img {
-    max-width: 64px;
+    max-width: 48px;
     max-height: 48px;
     height: auto;
     width: auto;
@@ -1357,18 +1368,27 @@ p a:hover {
   .circle p {
     font-size: 30px;
   }
+  .circle img {
+    max-width: 32x;
+    max-height: 32px;
+  }
 }
 
 .listing-card-wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
   width: 100%;
 }
 
 .listing-card {
   display: flex;
   flex-direction: column;
+  width: calc(33.333% - 20px);
+  max-width: 420px;
+  min-width: 332px;
 }
 .listing-card.treatment-card .text-wrapper .standard-text {
   max-width: 240px;
@@ -1404,6 +1424,24 @@ p a:hover {
 }
 .listing-card .text-wrapper .button {
   margin: 40px auto 0;
+}
+@media all and (max-width: 1100px) {
+  .listing-card {
+    width: calc(50% - 30px);
+    max-width: initial;
+  }
+  .listing-card .text-wrapper {
+    padding: 40px;
+  }
+}
+@media all and (max-width: 754px) {
+  .listing-card {
+    width: 100%;
+    max-width: 604px;
+  }
+  .listing-card .text-wrapper {
+    padding: 40px 30px;
+  }
 }
 
 .breadcrumb {
@@ -2432,6 +2470,10 @@ body.compensate-for-scrollbar {
   }
 }
 @media all and (max-width: 690px) {
+  #footer .footer-section .container {
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
   #footer .footer-section .footer-links-wrapper {
     flex-direction: column;
     align-items: flex-start;
@@ -3001,7 +3043,7 @@ body.compensate-for-scrollbar {
   max-width: 600px;
 }
 .image-text-columns .wrapper .half .text-wrapper .cta-button {
-  margin-top: 40px;
+  margin: 40px auto 0;
 }
 .image-text-columns .wrapper .half .text-wrapper .cta-button .cta-text {
   font-size: 32px;
@@ -3153,6 +3195,10 @@ body.compensate-for-scrollbar {
   -o-object-position: center;
      object-position: center;
 }
+.cta-hero .wrapper .image-cta-container .image-overlay {
+  height: 100%;
+  width: 100%;
+}
 .cta-hero .wrapper .image-cta-container .cta-wrapper {
   height: 30%;
   display: flex;
@@ -3180,6 +3226,9 @@ body.compensate-for-scrollbar {
   .cta-hero {
     padding-top: 0;
   }
+  .cta-hero .container {
+    padding: 0;
+  }
   .cta-hero .wrapper {
     flex-direction: column;
   }
@@ -3194,8 +3243,8 @@ body.compensate-for-scrollbar {
   }
   .cta-hero .wrapper .text-wrapper {
     background-color: #606c68;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
@@ -3274,6 +3323,9 @@ body.compensate-for-scrollbar {
     padding: 60px 20px;
     width: 100dvw;
     max-width: 290px;
+  }
+  .treatments-hero.bg-grey .treatments .treatments-inner .treatment-card {
+    background-color: rgba(172, 168, 165, 0.2);
   }
 }
 
@@ -3614,6 +3666,9 @@ body.compensate-for-scrollbar {
     align-items: center;
     justify-content: center;
   }
+  .review-mosaic .wrapper .main-content .bottom-content .text-container {
+    margin: 0 auto;
+  }
   .review-mosaic .wrapper .main-content .bottom-content .text-container .text-container-inner h2 {
     font-size: 36px;
   }
@@ -3658,7 +3713,7 @@ body.compensate-for-scrollbar {
     background-position: top;
     background-color: #606c68;
     min-height: initial;
-    padding-top: 320px;
+    padding-top: 260px;
   }
   .full-image-section .container .wrapper {
     padding: 50px 30px;
@@ -3681,11 +3736,8 @@ body.compensate-for-scrollbar {
 }
 @media all and (max-width: 600px) {
   .full-width-image-banner {
-    background-size: 100% 422px;
+    background-size: auto 422px;
     background-color: #606c68;
-  }
-  .full-width-image-banner .wrapper {
-    margin-top: 310px;
   }
   .full-width-image-banner .wrapper .button {
     margin-top: 40px;
@@ -3800,6 +3852,8 @@ body.compensate-for-scrollbar {
 .contact-info-bar {
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 40px;
 }
 .contact-info-bar .contact-info-bar-item {
   align-items: center;
@@ -3838,6 +3892,13 @@ body.compensate-for-scrollbar {
   right: 0;
   left: initial;
 }
+@media all and (max-width: 600px) {
+  .contact-info-bar {
+    max-width: 300px;
+    margin: 0 auto;
+    row-gap: 20px;
+  }
+}
 
 .faqs-section .container {
   padding: 100px 230px;
@@ -3865,6 +3926,9 @@ body.compensate-for-scrollbar {
   justify-content: space-between;
   cursor: pointer;
 }
+.faqs-section .faq-card .question-button-wrapper h3 {
+  margin-right: 30px;
+}
 .faqs-section .faq-card .answer-wrapper {
   padding-top: 0;
   max-height: 0;
@@ -3872,6 +3936,28 @@ body.compensate-for-scrollbar {
   transition: all 0.4s ease-out;
   max-width: 1058px;
   width: 95%;
+}
+@media all and (max-width: 1440px) {
+  .faqs-section {
+    padding: 60px 30px;
+  }
+  .faqs-section .container {
+    padding: 80px 120px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .faqs-section .container {
+    padding: 60px 40px;
+  }
+}
+@media all and (max-width: 600px) {
+  .faqs-section {
+    padding: 0;
+    border-bottom: 3px solid #606c68;
+  }
+  .faqs-section .container {
+    padding: 40px 30px;
+  }
 }
 
 .info-blocks-section {
@@ -3924,6 +4010,70 @@ body.compensate-for-scrollbar {
 }
 .info-blocks-section .info-block-wrapper .info-container-card .text-content h3 {
   margin-right: auto;
+}
+@media all and (max-width: 1200px) {
+  .info-blocks-section .info-block-wrapper .info-container-card .image-wrapper {
+    margin-right: 120px;
+  }
+  .info-blocks-section .info-block-wrapper .info-container-card .image-wrapper .count-icon {
+    right: -70px;
+    height: 140px;
+    width: 140px;
+  }
+  .info-blocks-section .info-block-wrapper .info-container-card .image-wrapper .count-icon p {
+    font-size: 80px;
+  }
+  .info-blocks-section .info-block-wrapper .info-container-card .text-content {
+    padding: 60px 0;
+    padding-right: 60px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .info-blocks-section .info-block-wrapper .info-container-card {
+    flex-direction: column;
+  }
+  .info-blocks-section .info-block-wrapper .info-container-card .image-wrapper {
+    width: 100%;
+    max-width: initial;
+    height: 100dvw;
+    max-height: 420px;
+    margin-right: 0;
+    min-width: initial;
+  }
+  .info-blocks-section .info-block-wrapper .info-container-card .image-wrapper .count-icon {
+    left: 50%;
+    right: initial;
+    transform: translateX(-50%) translateY(0);
+    bottom: -70px;
+    top: initial;
+  }
+  .info-blocks-section .info-block-wrapper .info-container-card .text-content {
+    padding: 95px 40px 60px;
+  }
+}
+@media all and (max-width: 600px) {
+  .info-blocks-section .info-block-wrapper .info-container-card {
+    flex-direction: column;
+  }
+  .info-blocks-section .info-block-wrapper .info-container-card .image-wrapper {
+    width: 100%;
+    max-width: initial;
+    height: 100dvw;
+    max-height: 420px;
+    margin-right: 0;
+    min-width: initial;
+  }
+  .info-blocks-section .info-block-wrapper .info-container-card .image-wrapper .count-icon {
+    bottom: -50px;
+    height: 100px;
+    width: 100px;
+  }
+  .info-blocks-section .info-block-wrapper .info-container-card .image-wrapper .count-icon p {
+    font-size: 60px;
+  }
+  .info-blocks-section .info-block-wrapper .info-container-card .text-content {
+    padding: 65px 30px 40px;
+  }
 }
 
 .before-after-image-block {
@@ -3994,6 +4144,12 @@ body.compensate-for-scrollbar {
 .before-after-image-block .before-after-container .slider-button .slider-button-inner::before {
   transform: rotate(135deg);
 }
+@media all and (max-width: 1100px) {
+  .before-after-image-block .wrapper .image-cta-container .image-wrapper {
+    max-height: 547px;
+    height: 80dvw;
+  }
+}
 
 .fifty-fifty-section {
   position: relative;
@@ -4023,6 +4179,12 @@ body.compensate-for-scrollbar {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+.fifty-fifty-section .fifty-column.bg-white {
+  padding-right: 40px;
+}
+.fifty-fifty-section .fifty-column.bg-medium-grey {
+  padding-left: 40px;
 }
 .fifty-fifty-section .fifty-column .inner-content {
   max-width: 524px;
@@ -4056,13 +4218,39 @@ body.compensate-for-scrollbar {
     margin-top: 50px;
   }
 }
-
-.reviews-banner .container {
-  padding: 0;
+@media all and (max-width: 1000px) {
+  .fifty-fifty-section .fifty-column {
+    padding-top: 80px;
+  }
+  .fifty-fifty-section .fifty-column .inner-content .image-wrapper {
+    max-height: 314px;
+    height: 80dvh;
+    margin: 0 auto 50px;
+  }
+}
+@media all and (max-width: 832px) {
+  .fifty-fifty-section {
+    padding-bottom: 0;
+  }
+  .fifty-fifty-section .wrapper {
+    padding: 0;
+    flex-direction: column;
+  }
+  .fifty-fifty-section .wrapper .fifty-column {
+    width: 100%;
+    max-width: initial;
+    padding: 60px 30px;
+  }
+  .fifty-fifty-section .wrapper .fifty-column .inner-content {
+    max-width: 640px;
+  }
 }
 @media all and (max-width: 600px) {
-  .reviews-banner {
-    padding: 30px;
+  .fifty-fifty-section .wrapper .fifty-column {
+    padding: 40px 30px;
+  }
+  .fifty-fifty-section .wrapper .fifty-column .inner-content .image-wrapper {
+    max-height: 280px;
   }
 }
 

@@ -16,7 +16,9 @@
 
 <section 
     class="section faqs-section bg-image"
-    data-source="<?= esc_attr(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')) ?>"
+    <?php if (!$detect) : ?>
+        data-source="<?= esc_attr(!empty($image) ? wp_get_attachment_image_url($image['id'], $image_size) : get_theme_file_uri('assets/images/default-image.jpg')) ?>"
+    <?php endif; ?>
 >
     <div class="container xtra bg-white">
 

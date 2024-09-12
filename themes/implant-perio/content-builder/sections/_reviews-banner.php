@@ -4,7 +4,7 @@
 ?>
 
 <section class="reviews-banner section bg-grey large-bottom">
-    <div class="container large no-pad">
+    <div class="container large">
 
         <!-- text content -->
         <div class="text-wrapper">

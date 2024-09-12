@@ -119,6 +119,21 @@ class FAQ {
     const parent = e.target.closest('.faq-card');
     const answer = parent.querySelector('.answer-wrapper');
     const icon = parent.querySelector('.plus-wrapper');
+
+    // check if another card that is already active.
+    const activeCard = document.querySelector('.faq-card.active');
+    if (activeCard && activeCard !== parent) {
+      const activeAnswer = activeCard.querySelector('.answer-wrapper');
+      const activeIcon = activeCard.querySelector('.plus-wrapper');
+
+      // remove active class lists
+      activeCard.classList.remove('active');
+      activeIcon.classList.remove('active');
+
+      // update styling
+      activeAnswer.style.maxHeight = null;
+      activeAnswer.style.paddingTop = null;
+    }
     parent.classList.toggle('active');
     icon.classList.toggle('active');
     if (answer.style.maxHeight) {

@@ -92,5 +92,15 @@
                 }
             }
         }
+
+        &.bg-grey {
+            .treatments {
+                .treatments-inner {
+                    .treatment-card {
+                        background-color: rgba($medium-grey, .2);
+                    }
+                }
+            }
+        }
     }
 }

@@ -40,6 +40,10 @@
 
     @media all and (max-width: 690px) {
         .footer-section {
+            .container {
+                max-width: fit-content;
+            }
+
             .footer-links-wrapper {
                 flex-direction: column;
                 align-items: flex-start;

@@ -28,7 +28,7 @@
     transition: all 200ms linear;
 
     &--pinned {
-        transform: translateY(0%);
+        transform: translateY(-100%);
     }
 
     &--not-top {
@@ -50,8 +50,9 @@
         }
     }
     
-    &--unpinned {
-        transform: translateY(-100%);
+    &--unpinned,
+    &--top {
+        transform: translateY(0);
     }
 }
 
@@ -269,7 +270,7 @@
         }
     
         img {
-            max-width: 64px;
+            max-width: 48px;
             max-height: 48px;
             height: auto;
             width: auto;
@@ -286,19 +287,28 @@
         p {
             font-size: 30px;
         }
+    
+        img {
+            max-width: 32x;
+            max-height: 32px;
+        }
     }
 }
 
 // listing blocks
 .listing-card-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px;
+    @include flex;
+    justify-content: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
     width: 100%;
 }
 
 .listing-card {
     @include flex(column);
+    width: calc(33.333% - 20px);
+    max-width: 420px;
+    min-width: 332px;
 
     &.treatment-card {
         .text-wrapper {
@@ -340,6 +350,24 @@
 
         .button {
             margin: 40px auto 0;
+        }
+    }
+
+    @media all and (max-width: 1100px) {
+        width: calc(50% - 30px);
+        max-width: initial;
+
+        .text-wrapper {
+            padding: 40px;
+        }
+    }
+
+    @media all and (max-width: 754px) {
+        width: 100%;
+        max-width: 604px;
+
+        .text-wrapper {
+            padding: 40px 30px;
         }
     }
 }

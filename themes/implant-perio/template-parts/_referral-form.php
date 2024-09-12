@@ -3,28 +3,28 @@
         <div class="form-input-left-wrapper form-inner-wrapper">
     
             <!-- name -->
-            <input type="text" placeholder="Dentist Name*" required name="dentist_name" />
+            <input type="text" placeholder="Dentist name*" required name="dentist_name" />
 
             <!-- email -->
-            <input type="email" placeholder="Dentist Email*" required name="dentist_email" />
+            <input type="email" placeholder="Dentist email*" required name="dentist_email" />
 
             <!-- telephone -->
-            <input type="tel" placeholder="Dentist Telephone*" required name="dentist_telephone" />
+            <input type="tel" placeholder="Dentist telephone*" required name="dentist_telephone" />
             
             <!-- name -->
-            <input type="text" placeholder="Patient Name*" required name="patient_name" />
+            <input type="text" placeholder="Patient name*" required name="patient_name" />
 
             <!-- email -->
-            <input type="email" placeholder="Patient Email*" required name="patient_email" />
+            <input type="email" placeholder="Patient email*" required name="patient_email" />
 
             <!-- telephone -->
-            <input type="tel" placeholder="Patient Telephone*" required name="patient_telephone" />
+            <input type="tel" placeholder="Patient telephone*" required name="patient_telephone" />
 
             <!-- new-patient -->
             <select name="treatment_options" class="treatment-options-dropdown">
                 <option value="" disabled selected>Treatment*</option>
                 <option value="dental implants">Dental Implants</option>
-                <option value="oral surgery">Advanced procedures</option>
+                <option value="oral surgery">Advanced Procedures</option>
                 <option value="periodontics">Periodontics</option>
             </select>
 

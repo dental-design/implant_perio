@@ -18,7 +18,7 @@
                 <table>
                     <thead>
                         <tr class="bg-grey">
-                            <th class="large-text semi-bold-text text-white"><strong>Treatments</strong></th>
+                            <th class="large-text semi-bold-text text-white"><strong>Treatment</strong></th>
                             <th width="300" class="large-text semi-bold-text text-white"><strong>Fee (from)</strong></th>
                         </tr>
 

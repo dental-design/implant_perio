@@ -60,4 +60,89 @@
             }
         }
     }
+
+    @media all and (max-width: 1200px) {
+        .info-block-wrapper {
+            .info-container-card {
+                .image-wrapper {
+                    margin-right: 120px;
+    
+                    .count-icon {
+                        right: -70px;
+                        height: 140px;
+                        width: 140px;
+    
+                        p {
+                            font-size: 80px;
+                        }
+                    }
+                }
+    
+                .text-content {
+                    padding: 60px 0;
+                    padding-right: 60px;
+                }
+            }
+        }
+    }
+
+    @include tablet {
+        .info-block-wrapper {
+            .info-container-card {
+                flex-direction: column;
+
+                .image-wrapper {
+                    width: 100%;
+                    max-width: initial;
+                    height: 100dvw;
+                    max-height: 420px;
+                    margin-right: 0;
+                    min-width: initial;
+
+                    .count-icon {
+                        left: 50%;
+                        right: initial;
+                        transform: translateX(-50%) translateY(0);
+                        bottom: -70px;
+                        top: initial;
+                    }
+                }
+
+                .text-content {
+                    padding: 95px 40px 60px;
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        .info-block-wrapper {
+            .info-container-card {
+                flex-direction: column;
+
+                .image-wrapper {
+                    width: 100%;
+                    max-width: initial;
+                    height: 100dvw;
+                    max-height: 420px;
+                    margin-right: 0;
+                    min-width: initial;
+
+                    .count-icon {
+                        bottom: -50px;
+                        height: 100px;
+                        width: 100px;
+
+                        p {
+                            font-size: 60px;
+                        }
+                    }
+                }
+
+                .text-content {
+                    padding: 65px 30px 40px;
+                }
+            }
+        }
+    }
 }

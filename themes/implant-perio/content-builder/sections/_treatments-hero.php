@@ -11,6 +11,8 @@
     $entries = $args['entries'];
     $image = $args['image'];
     $background = $args['background'];
+
+    $counter = 1;
 ?>
 
 <?php if ($entries) : ?>
@@ -30,16 +32,21 @@
                 <div class="treatments-inner flex-row">
 
                     <?php foreach($entries as $post) : setup_postdata($post); ?>
-        
-                        <a href="<?= esc_url(the_permalink()); ?>" class="treatment-card">
-        
-                            <div class="image-wrapper bg-green circle">
-                                <img height="52" width="68" data-source="<?= esc_url(!empty(get_field('listing_icon')) ? wp_get_attachment_image_url(get_field('listing_icon')['id']) : get_theme_file_uri('assets/images/default-icon.png')); ?>" alt="<?= !empty($image['alt']) ? $image['alt'] : get_the_title(); ?>">
-                            </div>
-        
-                            <!-- title -->
-                            <h3 class="center-text text-white"><?= !empty(get_field('listing_title')) ? get_field('listing_title') : get_the_title(); ?></h3>
-                        </a>
+
+                        <?php if ($counter < 4) : ?>
+                            <a href="<?= esc_url(the_permalink()); ?>" class="treatment-card">
+            
+                                <div class="image-wrapper bg-green circle">
+                                    <img height="52" width="68" data-source="<?= esc_url(!empty(get_field('listing_icon')) ? wp_get_attachment_image_url(get_field('listing_icon')['id']) : get_theme_file_uri('assets/images/default-icon.png')); ?>" alt="<?= !empty($image['alt']) ? $image['alt'] : get_the_title(); ?>">
+                                </div>
+            
+                                <!-- title -->
+                                <h3 class="center-text text-white"><?= !empty(get_field('listing_title')) ? get_field('listing_title') : get_the_title(); ?></h3>
+
+                            </a>
+
+                            <?php $counter++; ?>
+                        <?php endif; ?>
         
                     <?php endforeach; wp_reset_postdata(); ?>
 

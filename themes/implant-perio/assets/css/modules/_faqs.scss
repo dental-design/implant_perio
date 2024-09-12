@@ -27,6 +27,10 @@
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
+
+            h3 {
+                margin-right: 30px;
+            }
         }
 
         .answer-wrapper {
@@ -36,6 +40,29 @@
             transition: all 0.4s ease-out;
             max-width: 1058px;
             width: 95%;
+        }
+    }
+
+    @media all and (max-width: 1440px) {
+        padding: 60px 30px;
+
+        .container {
+            padding: 80px 120px;
+        }
+    }
+
+    @include tablet {
+        .container {
+            padding: 60px 40px;
+        }
+    }
+
+    @include mobile {
+        padding: 0;
+        border-bottom: 3px solid $grey;
+
+        .container {
+            padding: 40px 30px;
         }
     }
 }
