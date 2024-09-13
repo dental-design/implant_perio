@@ -1,5 +1,13 @@
 .fees-table {
     border-bottom: 1px solid $grey;
+
+    .container {
+        overflow: hidden;
+    }
+
+    .table-wrapper {
+        overflow: scroll;
+    }
     
     &:last-of-type {
         border-bottom: none;

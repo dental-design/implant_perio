@@ -19,14 +19,14 @@
                     <thead>
                         <tr class="bg-grey">
                             <th class="large-text semi-bold-text text-white"><strong>Treatment</strong></th>
-                            <th width="300" class="large-text semi-bold-text text-white"><strong>Fee (from)</strong></th>
+                            <th class="large-text semi-bold-text text-white col-2"><strong>Fee (from)</strong></th>
                         </tr>
 
                         <tbody>
                             <?php foreach($table as $row) : ?>
                                 <tr>
                                     <td class="standard-text"><?= $row['treatment']; ?></td>
-                                    <td  width="300" class="standard-text"><?= $row['fee']; ?></td>
+                                    <td class="standard-text col-2"><?= $row['fee']; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

@@ -13,4 +13,11 @@
     &.active-nav {
         opacity: .6;
     }
+
+    @include tablet {
+        &.active-nav-mobile {
+            opacity: .6;
+            pointer-events: all;
+        }
+    }
 }

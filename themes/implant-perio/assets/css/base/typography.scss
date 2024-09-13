@@ -160,13 +160,15 @@ a {
 	text-decoration: none;
 }
 
-p {
+p,
+span {
 	a {
 		color: inherit;
 		transition: all 0.4s ease;
 		border-bottom: 2px solid rgba($true-black, 0);
 		font-weight: inherit;
 		font-size: inherit;
+		line-height: inherit;
 
 		&:hover {
 			color: $black;

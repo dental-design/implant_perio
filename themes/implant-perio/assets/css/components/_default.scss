@@ -30,25 +30,6 @@
     &--pinned {
         transform: translateY(-100%);
     }
-
-    &--not-top {
-        .main-navigation {
-            nav {
-                .nav-group {
-                    li {
-                        a {
-                            padding: 30px 0;
-                        }
-
-                        .children {
-                            max-width: initial;
-                            padding: 30px 210px;
-                        }
-                    }
-                }
-            }
-        }
-    }
     
     &--unpinned,
     &--top {
@@ -365,6 +346,7 @@
     @media all and (max-width: 754px) {
         width: 100%;
         max-width: 604px;
+        margin: 0 auto;
 
         .text-wrapper {
             padding: 40px 30px;

@@ -18,6 +18,12 @@ body {
 	&.bio-locked {
 		overflow: hidden;
 	}
+
+	@include tablet {
+		&.locked-mobile-nav {
+			overflow: hidden;
+		}
+	}
 }
 
 .unpadded {

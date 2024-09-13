@@ -12,6 +12,8 @@ import MenuHover from "./modules/MenuHover";
 // standard function components
 import "./modules/BeforeAfter";
 import "./modules/Lazyload";
+import "./modules/BurgerMenu";
+import "./modules/Checkbox";
 import "./modules/slick";
 
 // Instantiate a new object using our modules/classes

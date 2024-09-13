@@ -12,10 +12,19 @@
     // Initialize the index variable
     $index = 0;
 
-    // Helper function to add child items to their parent
+    // Helper function to add child items to their parent, recursively
     function add_child_to_group(&$group, $parent_id, $child) {
-        if (array_key_exists($parent_id, $group)) {
-            $group[$parent_id]['children'][] = $child;
+        foreach ($group as &$parent) {
+            if ($parent['item']->ID == $parent_id) {
+                $parent['children'][$child->ID] = [
+                    'item' => $child,
+                    'children' => [],
+                ];
+                return;
+            }
+
+            // Recursively search for the parent in the children
+            add_child_to_group($parent['children'], $parent_id, $child);
         }
     }
 
@@ -23,27 +32,21 @@
     foreach ($menu_items as $item) {
         if ($item->menu_item_parent == 0) {
             if ($index < 3) {
-
                 $group_1[$item->ID] = [
                     'item' => $item,
                     'children' => [],
                 ];
-
             } else {
-
                 $group_2[$item->ID] = [
                     'item' => $item,
                     'children' => [],
                 ];
-
             }
             $index++;
         } else {
-
-            // Add child items to the appropriate parent group
+            // Add child items to the appropriate parent group recursively
             add_child_to_group($group_1, $item->menu_item_parent, $item);
             add_child_to_group($group_2, $item->menu_item_parent, $item);
-
         }
     }
 
@@ -54,7 +57,7 @@
         }
 
         foreach ($parent['children'] as $child) {
-            if ($child->object_id == $current_page_id) {
+            if (is_active_menu_item($child, $current_page_id)) { // Recursive check for nested children
                 return true;
             }
         }
@@ -62,35 +65,40 @@
         return false;
     }
 
-    // Function to call the nav items later in the code
-    function callNavItems($group) {
+        // Recursive function to render menu items
+    function render_menu_items($group, $level = 1) {
         $current_page_id = get_the_ID(); // Get current page ID
-        ?>
 
-        <?php 
-        foreach($group as $parent) : 
+        foreach ($group as $parent) : 
+            $active_class = is_active_menu_item($parent, $current_page_id) ? 'active' : ''; // Determine if the parent is active
+            ?>
 
-        $active_class = is_active_menu_item($parent, $current_page_id) ? 'active' : ''; // Determine if the parent is active
-        ?>
-            
             <li class="<?= $active_class; ?> <?= !empty($parent['children']) ? 'has-children' : 'free'; ?>">
-                <a href="<?= esc_url($parent['item']->url) ?>" class="text-white"><?= esc_html($parent['item']->title) ?></a>
+                <div class="nav-item-wrapper flex-row">
+                    <a href="<?= esc_url($parent['item']->url) ?>"><?= esc_html($parent['item']->title) ?></a>
+    
+                    <?php if (!empty($parent['children'])) : ?>
+                        <span class="text-white small-text icon-wrapper open-nav-click"><i class="fa-solid fa-chevron-right"></i></span>
+                    <?php endif; ?>
+                </div>
 
                 <?php if (!empty($parent['children'])) : ?>
-                    
-                    <ul class="children level-1">
-                        <?php foreach($parent['children'] as $child) : ?>
-                        
-                            <li><a href="<?= esc_url($child->url) ?>" class="text-white"><?= esc_html($child->title) ?></a></li>
 
-                        <?php endforeach; ?>
+                    <ul class="children level-<?= $level; ?>"> <!-- Dynamically set the level class -->
+
+                        <li class="icon-wrapper-sub">
+                            <span class="text-white small-text icon-wrapper close-nav-click">
+                                <i class="fa-solid fa-chevron-left"></i></li>
+                            </span>
+
+                        <?php render_menu_items($parent['children'], $level + 1); // Recursively render children, incrementing the level ?>
                     </ul>
 
                 <?php endif; ?>
             </li>
 
         <?php endforeach; ?>
-<?php } ?>
+<?php }  ?>
 
 
 <div class="main-navigation container small">
@@ -104,11 +112,11 @@
 
         <!-- left nav group -->
         <ul class="nav-group left-nav flex-row">
-            <?php callNavItems($group_1); ?>
+            <?php render_menu_items($group_1); ?>
         </ul>
 
         <!-- logo/ home link -->
-        <div class="home-link-wrapper">
+        <div class="home-link-wrapper desktop-home-link-wrapper">
             <a href="<?= site_url(); ?>" class="home-link" aria-label="<?= get_bloginfo('title'); ?> homepage link">
 
                 <!-- desktop logo -->
@@ -137,10 +145,12 @@
 
         <!-- right nav group -->
         <ul class="nav-group right-nav flex-row">
-            <?php callNavItems($group_2); ?>
+            <?php render_menu_items($group_2); ?>
         </ul>
 
         <!-- telephone number - global acf --> 
-        <a class="tel-link nav-link text-white" href="tel:<?= str_replace(' ', '', $telephone); ?>"><?= $telephone; ?></a>
+        <div class="tel-link-container">
+            <a class="tel-link nav-link text-white" href="tel:<?= str_replace(' ', '', $telephone); ?>"><?= $telephone; ?></a>
+        </div>
     </nav>
 </div>

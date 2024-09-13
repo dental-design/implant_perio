@@ -21,8 +21,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_BeforeAfter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/BeforeAfter */ "./assets/js/modules/BeforeAfter.js");
 /* harmony import */ var _modules_Lazyload__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/Lazyload */ "./assets/js/modules/Lazyload.js");
 /* harmony import */ var _modules_Lazyload__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_Lazyload__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _modules_slick__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/slick */ "./assets/js/modules/slick.js");
-/* harmony import */ var _modules_slick__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_slick__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _modules_BurgerMenu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/BurgerMenu */ "./assets/js/modules/BurgerMenu.js");
+/* harmony import */ var _modules_Checkbox__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/Checkbox */ "./assets/js/modules/Checkbox.js");
+/* harmony import */ var _modules_slick__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/slick */ "./assets/js/modules/slick.js");
+/* harmony import */ var _modules_slick__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_slick__WEBPACK_IMPORTED_MODULE_11__);
 
 
 
@@ -34,6 +36,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // standard function components
+
+
 
 
 
@@ -90,6 +94,91 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#slider').on('input change', func
 
   // Update the position of the slider button
   $parent.find('.slider-button').css('left', `calc(${width} - 10px)`);
+});
+
+/***/ }),
+
+/***/ "./assets/js/modules/BurgerMenu.js":
+/*!*****************************************!*\
+  !*** ./assets/js/modules/BurgerMenu.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  let navToggle = false;
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#hamburger').on('click', e => {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#hamburger').toggleClass('is-active');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').toggleClass('locked-mobile-nav');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#site-nav').toggleClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.body-overlay').toggleClass('active-nav-mobile');
+
+    // check for window resize. If resize is greater than 1000px, close the mobile nav
+    if (!navToggle) {
+      const resizeListener = () => {
+        if (window.innerWidth > 1000) {
+          closeNav();
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).off('resize', resizeListener);
+        }
+      };
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('resize', resizeListener);
+    }
+    navToggle = true;
+  });
+
+  // open sub nav items
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.open-nav-click').on('click', e => {
+    if (window.innerWidth <= 1000) {
+      const parent = e.target.closest('li');
+      parent.querySelector('.children').classList.add('active');
+    }
+  });
+
+  // close sub nav items
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.close-nav-click').on('click', e => {
+    if (window.innerWidth <= 1000) {
+      const parent = e.target.closest('ul');
+      parent.classList.remove('active');
+    }
+  });
+
+  // close mobile nav if clicking outside of the navigation
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.body-overlay').on('click', e => closeNav());
+
+  // reuseable close nav function
+  function closeNav(e) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#hamburger').removeClass('is-active');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('locked-mobile-nav');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#site-nav').removeClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.body-overlay').removeClass('active-nav-mobile');
+    navToggle = false;
+  }
+});
+
+/***/ }),
+
+/***/ "./assets/js/modules/Checkbox.js":
+/*!***************************************!*\
+  !*** ./assets/js/modules/Checkbox.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkbox-wrapper .checkbox-check, .checkbox-check-text').click(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkbox-check').toggleClass('checked');
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.contact-form-checkbox').checked != true) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".contact-form-checkbox").checked = true;
+  } else {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".contact-form-checkbox").checked = false;
+  }
 });
 
 /***/ }),

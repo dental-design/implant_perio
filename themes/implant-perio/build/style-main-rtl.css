@@ -443,10 +443,10 @@ textarea {
   cursor: pointer;
   position: relative;
   margin-left: 15px;
-  width: 41px;
-  height: 41px;
-  min-width: 41px;
-  min-height: 41px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
   -webkit-tap-highlight-color: transparent;
   transform: translate3d(0, 0, 0);
   display: flex;
@@ -484,10 +484,10 @@ textarea {
 }
 @media all and (max-width: 600px) {
   .check {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    min-height: 28px;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
   }
 }
 
@@ -499,19 +499,35 @@ table {
   overflow: hidden;
   width: 100%;
   background-color: #ffffff;
+  overflow: scroll;
+  min-width: 627px;
 }
 table th,
 table td {
   padding: 30px 20px;
   text-align: right;
-  vertical-align: middle;
+  vertical-align: bottom;
   line-height: 1.3;
+}
+table th.col-2,
+table td.col-2 {
+  width: 250px;
 }
 table th {
   background-color: #606c68;
 }
 table td {
   border: 1px solid #606c68;
+}
+@media all and (max-width: 1000px) {
+  table th,
+  table td {
+    padding: 20px 15px;
+  }
+  table th.col-2,
+  table td.col-2 {
+    width: 200px;
+  }
 }
 
 html {
@@ -534,6 +550,12 @@ html.locked, html.bio-locked,
 body.locked,
 body.bio-locked {
   overflow: hidden;
+}
+@media all and (max-width: 1000px) {
+  html.locked-mobile-nav,
+  body.locked-mobile-nav {
+    overflow: hidden;
+  }
 }
 
 .unpadded {
@@ -857,14 +879,17 @@ a {
   text-decoration: none;
 }
 
-p a {
+p a,
+span a {
   color: inherit;
   transition: all 0.4s ease;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
   font-weight: inherit;
   font-size: inherit;
+  line-height: inherit;
 }
-p a:hover {
+p a:hover,
+span a:hover {
   color: #0a000a;
   border-color: #000000;
 }
@@ -1161,13 +1186,6 @@ p a:hover {
 .headroom--pinned {
   transform: translateY(-100%);
 }
-.headroom--not-top .main-navigation nav .nav-group li a {
-  padding: 30px 0;
-}
-.headroom--not-top .main-navigation nav .nav-group li .children {
-  max-width: initial;
-  padding: 30px 210px;
-}
 .headroom--unpinned, .headroom--top {
   transform: translateY(0);
 }
@@ -1438,6 +1456,7 @@ p a:hover {
   .listing-card {
     width: 100%;
     max-width: 604px;
+    margin: 0 auto;
   }
   .listing-card .text-wrapper {
     padding: 40px 30px;
@@ -2359,12 +2378,6 @@ body.compensate-for-scrollbar {
   right: initial;
 }
 
-.hamburger.is-active .hamburger-inner,
-.hamburger.is-active .hamburger-inner::before,
-.hamburger.is-active .hamburger-inner::after {
-  width: 28px;
-}
-
 .hamburger--slider .hamburger-inner {
   top: 2px;
 }
@@ -2390,7 +2403,7 @@ body.compensate-for-scrollbar {
 }
 
 .hamburger--slider.is-active .hamburger-inner::after {
-  transform: translate3d(0, -20px, 0) rotate(90deg);
+  transform: translate3d(0, -25px, 0) rotate(90deg);
 }
 
 .body-overlay {
@@ -2407,6 +2420,12 @@ body.compensate-for-scrollbar {
 }
 .body-overlay.active-nav {
   opacity: 0.6;
+}
+@media all and (max-width: 1000px) {
+  .body-overlay.active-nav-mobile {
+    opacity: 0.6;
+    pointer-events: all;
+  }
 }
 
 #footer .footer-section {
@@ -2652,6 +2671,15 @@ body.compensate-for-scrollbar {
   transition: padding 0.4s ease-out;
   position: relative;
 }
+.navigation-section .main-navigation nav .icon-wrapper {
+  display: none;
+}
+.navigation-section .main-navigation nav .icon-wrapper-sub {
+  pointer-events: none;
+}
+.navigation-section .main-navigation nav .icon-wrapper-sub .icon-wrapper {
+  pointer-events: all;
+}
 .navigation-section .main-navigation nav .home-link-wrapper {
   margin-right: auto;
   margin-left: auto;
@@ -2664,6 +2692,9 @@ body.compensate-for-scrollbar {
   fill: #cff85d;
 }
 @media all and (min-width: 1000px) {
+  .navigation-section .main-navigation nav .nav-group li.has-children {
+    position: relative;
+  }
   .navigation-section .main-navigation nav .nav-group li.active a {
     color: #cff85d;
   }
@@ -2679,6 +2710,7 @@ body.compensate-for-scrollbar {
     padding-top: 15px;
     padding: 45px 0;
     display: block;
+    color: #ffffff;
   }
   .navigation-section .main-navigation nav .nav-group li a::after {
     content: "";
@@ -2712,36 +2744,71 @@ body.compensate-for-scrollbar {
   .navigation-section .main-navigation nav .nav-group li .children {
     height: 0;
     max-height: 0;
+    overflow: hidden;
     opacity: 0;
     pointer-events: none;
     position: absolute;
     transition: all 0.4s ease-out;
     top: calc(100% - 2px);
-    right: 50%;
-    transform: translateX(50%);
-    width: 100dvw;
-    max-width: 1380px;
-    background-color: #606c68;
+    right: 0;
+    background-color: #aca8a5;
     z-index: 2;
-    padding: 60px 210px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px 30px;
-    flex-wrap: wrap;
-    border-top: 2px solid #efefef;
+  }
+  .navigation-section .main-navigation nav .nav-group li .children li {
+    border-bottom: 2px solid #606c68;
+    margin: 0;
+    width: 100%;
+    transition: border 0.3s ease-out;
+  }
+  .navigation-section .main-navigation nav .nav-group li .children li .nav-item-wrapper {
+    width: 100%;
+  }
+  .navigation-section .main-navigation nav .nav-group li .children li .nav-item-wrapper a {
+    width: 100%;
+  }
+  .navigation-section .main-navigation nav .nav-group li .children li.has-children {
+    position: relative;
+    border-left: 2px solid transparent;
+  }
+  .navigation-section .main-navigation nav .nav-group li .children li.has-children .level-2 {
+    top: 0;
+    right: calc(100% + 2px);
+    opacity: 0;
+    height: 0;
+    max-height: 0;
+    pointer-events: none;
+  }
+  .navigation-section .main-navigation nav .nav-group li .children li.has-children:hover {
+    border-color: #606c68;
+  }
+  .navigation-section .main-navigation nav .nav-group li .children li.has-children:hover .level-2 {
+    height: -moz-fit-content;
+    height: fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    opacity: 1;
+    pointer-events: all;
   }
   .navigation-section .main-navigation nav .nav-group li .children li a {
-    padding: 15px 0;
+    padding: 15px 30px;
+    display: block;
+    color: #efefef;
+    white-space: nowrap;
+    transition: all 0.4s ease-out;
   }
   .navigation-section .main-navigation nav .nav-group li .children li a::after {
-    bottom: 10px;
+    display: none;
+  }
+  .navigation-section .main-navigation nav .nav-group li .children li a:hover {
+    background-color: #efefef;
+    color: #606c68;
   }
   .navigation-section .main-navigation nav .nav-group li:hover .children {
     height: -moz-fit-content;
     height: fit-content;
     max-height: -moz-fit-content;
     max-height: fit-content;
+    overflow: initial;
     opacity: 1;
     pointer-events: all;
   }
@@ -2765,13 +2832,112 @@ body.compensate-for-scrollbar {
   }
   .navigation-section .main-navigation nav {
     position: fixed;
-    top: 0;
+    top: 75px;
     right: 0;
-    max-width: 400px;
-    transform: translateX(400px);
+    width: 100dvw;
+    max-width: 300px;
+    transform: translateX(300px);
     transition: all 0.4s ease-out;
     opacity: 0;
     pointer-events: none;
+    background-color: #606c68;
+    overflow: hidden;
+    display: block;
+    height: 100dvh;
+  }
+  .navigation-section .main-navigation nav.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+  .navigation-section .main-navigation nav .desktop-home-link-wrapper {
+    display: none;
+  }
+  .navigation-section .main-navigation nav .tel-link-container {
+    border-bottom: 2px solid #ffffff;
+    width: 100%;
+    height: 70px;
+  }
+  .navigation-section .main-navigation nav .nav-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .navigation-section .main-navigation nav .nav-group li {
+    border-bottom: 2px solid #ffffff;
+    width: 100%;
+    height: 70px;
+  }
+  .navigation-section .main-navigation nav .nav-group li .nav-item-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+  .navigation-section .main-navigation nav .nav-group li .nav-item-wrapper .icon-wrapper {
+    display: block;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    border-right: 2px solid #ffffff;
+    transition: all 0.4s ease-out;
+    cursor: pointer;
+  }
+  .navigation-section .main-navigation nav .nav-group li .nav-item-wrapper .icon-wrapper:hover {
+    background-color: #aca8a5;
+  }
+  .navigation-section .main-navigation nav .nav-group .children {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    opacity: 0;
+    z-index: 3;
+    width: 100dvw;
+    max-width: 300px;
+    transform: translateX(-100%);
+    pointer-events: none;
+    transition: all 0.4s ease-out;
+    background-color: #606c68;
+  }
+  .navigation-section .main-navigation nav .nav-group .children.active {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: all;
+    overflow: scroll;
+  }
+  .navigation-section .main-navigation nav .nav-group .children .icon-wrapper-sub {
+    height: 70px;
+    width: 100%;
+  }
+  .navigation-section .main-navigation nav .nav-group .children .icon-wrapper-sub .icon-wrapper {
+    color: #ffffff;
+    border-left: 2px solid #ffffff;
+    width: 70px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .navigation-section .main-navigation nav .nav-group .children .icon-wrapper-sub .icon-wrapper:hover {
+    background-color: #aca8a5;
+  }
+  .navigation-section .main-navigation nav a {
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease-out;
+  }
+  .navigation-section .main-navigation nav a:hover {
+    background-color: #aca8a5;
   }
 }
 @media all and (max-width: 600px) {
@@ -4256,6 +4422,12 @@ body.compensate-for-scrollbar {
 
 .fees-table {
   border-bottom: 1px solid #606c68;
+}
+.fees-table .container {
+  overflow: hidden;
+}
+.fees-table .table-wrapper {
+  overflow: scroll;
 }
 .fees-table:last-of-type {
   border-bottom: none;

@@ -6,13 +6,19 @@ table {
 	overflow: hidden;
 	width: 100%;
 	background-color: $white;
+	overflow: scroll;
+	min-width: 627px;
 
 	th,
 	td {
 		padding: 30px 20px;
 		text-align: left;
-		vertical-align: middle;
+		vertical-align: bottom;
 		line-height: 1.3;
+
+		&.col-2 {
+			width: 250px;
+		}
 	}
 
 	th {
@@ -21,5 +27,16 @@ table {
 	
 	td {
 		border: 1px solid $grey;
+	}
+
+	@include tablet {
+		th,
+		td {
+			padding: 20px 15px;
+	
+			&.col-2 {
+				width: 200px;
+			}
+		}
 	}
 }

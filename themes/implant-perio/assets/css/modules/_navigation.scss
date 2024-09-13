@@ -23,6 +23,18 @@
             justify-content: center;
             transition: padding .4s ease-out;
             position: relative;
+
+            .icon-wrapper {
+                display: none;
+            }
+
+            .icon-wrapper-sub {
+                pointer-events: none;
+
+                .icon-wrapper {
+                    pointer-events: all;
+                }
+            }
     
             .home-link-wrapper {
                 margin-left: auto;
@@ -49,6 +61,10 @@
             @media all and (min-width: 1000px) {
                 .nav-group {
                     li {
+                        &.has-children {
+                            position: relative;
+                        }
+
                         &.active {
                             a {
                                 color: $green;
@@ -71,6 +87,7 @@
                             @include anchorHover($white, 2px);
                             padding: 45px 0;
                             display: block;
+                            color: $white;
         
                             &::after {
                                 bottom: 2px;
@@ -81,30 +98,69 @@
                         .children {
                             height: 0;
                             max-height: 0;
+                            overflow: hidden;
                             opacity: 0;
                             pointer-events: none;
                             position: absolute;
                             transition: all .4s ease-out;
                             top: calc(100% - 2px);
-                            left: 50%;
-                            transform: translateX(-50%);
-                            width: 100dvw;
-                            max-width: 1380px;
-                            background-color: $grey;
+                            left: 0;
+                            background-color: $medium-grey;
                             z-index: 2;
-                            padding: 60px 210px;
-                            @include flex;
-                            justify-content: center;
-                            gap: 15px 30px;
-                            flex-wrap: wrap;
-                            border-top: 2px solid $light-grey;
         
                             li {
+                                border-bottom: 2px solid $grey;
+                                margin: 0;
+                                width: 100%;
+                                transition: border .3s ease-out;
+
+                                .nav-item-wrapper {
+                                    width: 100%;
+
+                                    a {
+                                        width: 100%;
+                                    }
+                                }
+
+                                &.has-children {
+                                    position: relative;
+                                    border-right: 2px solid transparent;
+
+                                    .level-2 {
+                                        top: 0;
+                                        left: calc(100% + 2px);
+                                        opacity: 0;
+                                        height: 0;
+                                        max-height: 0;
+                                        pointer-events: none;
+                                    }
+
+                                    &:hover {
+                                        border-color: $grey;
+
+                                        .level-2 {
+                                            height: fit-content;
+                                            max-height: fit-content;
+                                            opacity: 1;
+                                            pointer-events: all;
+                                        }
+                                    }
+                                }
+
                                 a {
-                                    padding: 15px 0;
+                                    padding: 15px 30px;
+                                    display: block;
+                                    color: $light-grey;
+                                    white-space: nowrap;
+                                    transition: all .4s ease-out;
         
                                     &::after {
-                                        bottom: 10px;
+                                        display: none;
+                                    }
+
+                                    &:hover {
+                                        background-color: $light-grey;
+                                        color: $grey;
                                     }
                                 }
                             }
@@ -114,6 +170,7 @@
                             .children {
                                 height: fit-content;
                                 max-height: fit-content;
+                                overflow: initial;
                                 opacity: 1;
                                 pointer-events: all;
                             }
@@ -144,13 +201,124 @@
 
             nav {
                 position: fixed;
-                top: 0;
+                top: 75px;
                 left: 0;
-                max-width: 400px;
-                transform: translateX(-400px);
+                width: 100dvw;
+                max-width: 300px;
+                transform: translateX(-300px);
                 transition: all .4s ease-out;
                 opacity: 0;
                 pointer-events: none;
+                background-color: $grey;
+                overflow: hidden;
+                display: block;
+                height: 100dvh;
+
+                &.active {
+                    opacity: 1;
+                    transform: translateX(0);
+                    pointer-events: all;
+                }
+
+                .desktop-home-link-wrapper {
+                    display: none;
+                }
+
+                .tel-link-container {
+                    border-bottom: 2px solid $white;
+                    width: 100%;
+                    height: 70px;
+                }
+
+                .nav-group {
+                    flex-direction: column;
+                    width: 100%;
+
+                    li {
+                        border-bottom: 2px solid $white;
+                        width: 100%;
+                        height: 70px;
+
+                        .nav-item-wrapper {
+                            height: 100%;
+                            width: 100%;
+
+                            .icon-wrapper {
+                                display: block;
+                                height: 100%;
+                                @include flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 70px;
+                                border-left: 2px solid $white;
+                                transition: all .4s ease-out;
+                                cursor: pointer;
+
+                                &:hover {
+                                    background-color: $medium-grey;
+                                }
+                            }
+                        }
+                    }
+
+                    .children {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        height: 100dvh;
+                        opacity: 0;
+                        z-index: 3;
+                        width: 100dvw;
+                        max-width: 300px;
+                        transform: translateX(100%);
+                        pointer-events: none;
+                        transition: all .4s ease-out;
+                        background-color: $grey;
+
+                        &.active {
+                            transform: translateX(0);
+                            opacity: 1;
+                            pointer-events: all;
+                            overflow: scroll;
+                        }
+
+                        .icon-wrapper-sub {
+                            height: 70px;
+                            width: 100%;
+
+                            .icon-wrapper {
+                                color: $white;
+                                border-right: 2px solid $white;
+                                width: 70px;
+                                height: 100%;
+                                @include flex;
+                                align-items: center;
+                                justify-content: center;
+                                cursor: pointer;
+
+                                &:hover {
+                                    background-color: $medium-grey;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                a {
+                    color: $white;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    text-align: center;
+                    @include flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all .4s ease-out;
+
+                    &:hover {
+                        background-color: $medium-grey;
+                    }
+                }
             }
         }
     }

@@ -38,7 +38,7 @@
                     
                     <input class="contact-form-checkbox" type="checkbox" value="y clicking 'Send message' you are consenting to us replying and storing your details (see our privacy policy)." name="Checkbox[]" id="checkbox-checkbox" style="display: none;">
 
-                    <span class="form-blurb small-text">By clicking 'Send message' you are consenting to us replying and storing your details (see our <a href="<?= esc_url(get_permalink('3')); ?>" class="text-link">privacy policy</a>).</span>
+                    <span class="form-blurb checkbox-check-text small-text">By clicking 'Send message' you are consenting to us replying and storing your details (see our <a href="<?= esc_url(get_permalink('3')); ?>" class="text-link">privacy policy</a>).</span>
                 </label>
             </div>
 

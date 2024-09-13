@@ -147,10 +147,10 @@ textarea {
 	cursor: pointer;
 	position: relative;
 	margin-right: 15px;
-	width: 41px;
-	height: 41px;
-	min-width: 41px;
-	min-height: 41px;
+	width: 28px;
+	height: 28px;
+	min-width: 28px;
+	min-height: 28px;
 	-webkit-tap-highlight-color: transparent;
 	transform: translate3d(0, 0, 0);
 	@include flex(column);
@@ -195,10 +195,10 @@ textarea {
 	}
 
 	@include mobile {
-		width: 28px;
-		height: 28px;
-		min-width: 28px;
-		min-height: 28px;
+		width: 18px;
+		height: 18px;
+		min-width: 18px;
+		min-height: 18px;
 	}
 }
 
