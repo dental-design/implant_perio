@@ -12,5 +12,8 @@ require_once( 'lib/theme_custom.php' );
 // image size transforms
 require_once( 'lib/image_transforms.php' );
 
+// webp
+require_once( 'lib/webp-images.php' );
+
 // shortcodes
 require_once( 'lib/shortcodes.php' );

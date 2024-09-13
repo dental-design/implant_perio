@@ -21,7 +21,7 @@
             <input type="tel" placeholder="Patient telephone*" required name="patient_telephone" />
 
             <!-- new-patient -->
-            <select name="treatment_options" class="treatment-options-dropdown">
+            <select name="treatment_options" class="treatment-options-dropdown" aria-label="Treatment select dropdown">
                 <option value="" disabled selected>Treatment*</option>
                 <option value="dental implants">Dental Implants</option>
                 <option value="oral surgery">Advanced Procedures</option>

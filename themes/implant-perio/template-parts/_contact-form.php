@@ -12,7 +12,7 @@
             <input type="tel" placeholder="Tel number*" required name="telephone" />
 
             <!-- new-patient -->
-            <select name="patient_status" class="patient-status-dropdown">
+            <select name="patient_status" class="patient-status-dropdown" aria-label="Dentist or patient dropdown">
                 <option value="" disabled selected>Dentist or patient?</option>
                 <option value="dentist">Dentist</option>
                 <option value="patient">Patient</option>

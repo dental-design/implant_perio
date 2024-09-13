@@ -59,6 +59,7 @@
 
     @include mobile {
         padding: 0;
+        padding-bottom: 60px;
         border-bottom: 3px solid $grey;
 
         .container {

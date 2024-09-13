@@ -21,8 +21,8 @@ function register_custom_image_sizes() {
         add_image_size($name, $desktop_width, $desktop_height, true);
 
         // Register mobile size with width 600px and proportional height, unless that height is less than 500.
-        $mobile_height = ($desktop_height / $desktop_width) * 600;
-        add_image_size('mobile' . ucfirst($name), 600, $mobile_height < 500 ? 500 : $mobile_height, true);
+        $mobile_height = ($desktop_height / $desktop_width) * 480;
+        add_image_size('mobile' . ucfirst($name), 480, $mobile_height < 480 ? 480 : $mobile_height, true);
     }
 
     // register image transforms that don't require a mobile image

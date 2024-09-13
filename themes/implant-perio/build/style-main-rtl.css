@@ -3682,6 +3682,9 @@ body.compensate-for-scrollbar {
   }
 }
 
+.review-mosaic {
+  overflow: hidden;
+}
 .review-mosaic .container {
   padding: 0;
   max-width: 1920px;
@@ -4119,6 +4122,7 @@ body.compensate-for-scrollbar {
 @media all and (max-width: 600px) {
   .faqs-section {
     padding: 0;
+    padding-bottom: 60px;
     border-bottom: 3px solid #606c68;
   }
   .faqs-section .container {
@@ -4195,6 +4199,9 @@ body.compensate-for-scrollbar {
   }
 }
 @media all and (max-width: 1000px) {
+  .info-blocks-section {
+    padding: 80px 0;
+  }
   .info-blocks-section .info-block-wrapper .info-container-card {
     flex-direction: column;
   }
@@ -4218,6 +4225,9 @@ body.compensate-for-scrollbar {
   }
 }
 @media all and (max-width: 600px) {
+  .info-blocks-section {
+    padding: 60px 0;
+  }
   .info-blocks-section .info-block-wrapper .info-container-card {
     flex-direction: column;
   }
