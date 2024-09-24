@@ -32,7 +32,7 @@
                 <p class="large-text bold-text job-title"><?= get_field('job_title'); ?></p>
 
                 <!-- qualification -->
-                <?php if (!empty(get_field('qualificiation'))) : ?>
+                <?php if (!empty(get_field('qualification'))) : ?>
                     <p class="standard-text qualification"><?= get_field('qualification'); ?></p>
                 <?php endif; ?>
 

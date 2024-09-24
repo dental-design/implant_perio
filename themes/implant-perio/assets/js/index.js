@@ -45,4 +45,12 @@ const menu = new MenuHover();
         dots: true,
         arrows: false,
     });
+    
+    $('.info-slider-wrapper').slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false,
+    });
 })();

@@ -25,7 +25,7 @@
         <div class="faq-inner">
 
             <!-- section heading -->
-            <h2 class="main-heading"><?= $heading ?></h2>
+            <h2 class=""><?= $heading ?></h2>
     
             <div class="faq-wrapper">
     
@@ -38,7 +38,7 @@
     
                         <!-- question -->
                         <div class="question-button-wrapper accordion">
-                            <h3 class="question base-text"><?= $faq['question']; ?></h3>
+                            <h3 class="base-text"><?= $faq['question']; ?></h3>
                             
                             <div class="plus-wrapper">
                                 <div class="line"></div>

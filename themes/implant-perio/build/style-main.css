@@ -974,7 +974,7 @@ span a:hover {
 .standard-text ol li:not(:last-of-type),
 .small-text ol li:not(:last-of-type),
 .xtra-small-text ol li:not(:last-of-type) {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .xtra-large-text ol li::before,
 .large-text ol li::before,
@@ -993,6 +993,29 @@ span a:hover {
   margin-right: 1rem;
   font-size: 16px;
   margin-left: -48px;
+}
+.xtra-large-text ol li ul,
+.large-text ol li ul,
+.standard-text ol li ul,
+.small-text ol li ul,
+.xtra-small-text ol li ul {
+  padding-top: 10px;
+}
+.xtra-large-text ol li ul li::before,
+.large-text ol li ul li::before,
+.standard-text ol li ul li::before,
+.small-text ol li ul li::before,
+.xtra-small-text ol li ul li::before {
+  content: "";
+  background-color: #cff85d;
+  border-radius: 50%;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin-right: 16px;
+  line-height: 1;
+  margin-bottom: 1.5px;
+  margin-left: -28px;
 }
 @media all and (max-width: 1000px) {
   .xtra-large-text > *:not(:last-child),
@@ -1150,6 +1173,10 @@ span a:hover {
 .text-white a:hover {
   border-color: #606c68;
   color: #606c68;
+}
+
+.text-real-black {
+  color: #0a000a;
 }
 
 .text-green {
@@ -4445,6 +4472,69 @@ body.compensate-for-scrollbar {
 .fees-table .asterisk-text {
   margin-top: 60px;
   width: 90%;
+}
+
+.info-slider-section {
+  overflow: hidden;
+  padding: 80px 0 120px;
+}
+.info-slider-section .info-slider-wrapper {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+.info-slider-section .info-slider-wrapper .slick-list,
+.info-slider-section .info-slider-wrapper .slick-track {
+  overflow: visible;
+}
+.info-slider-section .info-slider-wrapper .slick-list .slick-slide,
+.info-slider-section .info-slider-wrapper .slick-track .slick-slide {
+  opacity: 0.4;
+  transition: all 0.4s ease-out;
+}
+.info-slider-section .info-slider-wrapper .slick-list .slick-slide.slick-current,
+.info-slider-section .info-slider-wrapper .slick-track .slick-slide.slick-current {
+  opacity: 1;
+}
+.info-slider-section .info-slider-wrapper .slick-dots {
+  position: static;
+  margin-top: 40px;
+}
+.info-slider-section .info-slider-wrapper .slick-dots li button {
+  border-color: #cff85d;
+}
+.info-slider-section .info-slider-wrapper .slick-dots li.slick-active button {
+  background-color: #cff85d;
+}
+.info-slider-section .info-slider-wrapper .info-slide {
+  padding: 0 20px;
+  overflow: hidden;
+  height: 100%;
+  cursor: grab;
+}
+.info-slider-section .info-slider-wrapper .info-slide:active {
+  cursor: grabbing;
+}
+.info-slider-section .info-slider-wrapper .info-slide .slide-content-wrapper {
+  background-color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.info-slider-section .info-slider-wrapper .info-slide .slide-content-wrapper .image-wrapper,
+.info-slider-section .info-slider-wrapper .info-slide .slide-content-wrapper .text-wrapper {
+  width: 50%;
+}
+.info-slider-section .info-slider-wrapper .info-slide .slide-content-wrapper .text-wrapper {
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.info-slider-section .info-slider-wrapper .info-slide .slide-content-wrapper .text-wrapper h3 {
+  margin-bottom: 40px;
+  margin-right: auto;
 }
 
 .footer-contact-section .image-container {

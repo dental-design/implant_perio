@@ -10,7 +10,7 @@
         <div class="container <?= $textOrientation ? 'center-text small' : 'left-align large'; ?> ">
 
             <!-- heading -->
-            <h2 class="main-heading <?= (!empty($textContent)) || (!empty($largeText)) ? 'add-margin' : ''; ?>"><?= $heading; ?></h2>
+            <h2 class="main-heading text-grey <?= (!empty($textContent)) || (!empty($largeText)) ? 'add-margin' : ''; ?>"><?= $heading; ?></h2>
 
         </div>
     <?php endif; ?>

@@ -230,9 +230,8 @@ span {
 			margin: 0.25rem;
 			
 			&:not(:last-of-type) {
-				margin-bottom: 10px;
+				margin-bottom: 20px;
 			}
-
 
 			&::before {
 				content: counter(custom-counter);
@@ -247,6 +246,25 @@ span {
 				margin-right: 1rem;
 				font-size: 16px;
 				margin-left: -48px; 
+			}
+
+			ul {
+				padding-top: 10px;
+
+				li {
+					&::before {
+						content: "";  
+						background-color: $green; 
+						border-radius: 50%;
+						display: inline-block;
+						height: 12px;
+						width: 12px;
+						margin-right: 16px;
+						line-height: 1;
+						margin-bottom: 1.5px;
+						margin-left: -28px; 
+					}
+				}
 			}
 		}
 	}
@@ -408,6 +426,10 @@ span {
 			color: $grey;
 		}
 	}
+}
+
+.text-real-black {
+	color: $black;
 }
 
 .text-green {

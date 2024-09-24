@@ -12,7 +12,7 @@ if ($entries) : ?>
                     <!-- output treatment posts - functions.php shortcodes -->
                     <?php listing_cards(
                         get_the_ID(),
-                        !empty(get_field('listing_image')) ?  wp_get_attachment_image_url(get_field('listing_image', 'avatar')) : get_theme_file_uri('assets/images/logo-avatar.png'),
+                        !empty(get_field('listing_image')) ?  wp_get_attachment_image_url(get_field('listing_image', 'avatar')) : get_the_post_thumbnail_url(),
                         !empty(get_field('listing_title')) ? get_field('listing_title') : get_the_title(),
                         get_field('listing_description'),
                         'treatment-card',

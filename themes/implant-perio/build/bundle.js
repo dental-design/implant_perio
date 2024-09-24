@@ -69,6 +69,13 @@ const menu = new _modules_MenuHover__WEBPACK_IMPORTED_MODULE_6__["default"]();
     dots: true,
     arrows: false
   });
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('.info-slider-wrapper').slick({
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: false
+  });
 })();
 
 /***/ }),

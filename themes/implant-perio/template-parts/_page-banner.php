@@ -53,7 +53,13 @@
                         ?>
                     </div>
                 <?php endif; ?>
+
+            <?php elseif (is_404()) : ?>
+
+                <h1 class="text-white add-margin large">Oops, page not found</h1>
+
             <?php else : ?>
+
                 <h1 class="text-white inner-main reg-text"><?= get_the_title(); ?></h1>
 
                 <?php if (function_exists('custom_breadcrumbs')) custom_breadcrumbs(); ?>
@@ -71,6 +77,24 @@
 
                 <!-- cta text - functions.php shortcodes -->
                 <?php custom_cta_button(get_field('cta_link')['title'], get_field('cta_link')['url'], 'page-banner-cta text-white center-text'); ?>
+
+            <?php elseif (is_404()) : ?>
+                
+                <div class="hero-container-content">
+                    
+                    <p class="text-white standard-text add-margin center-text">Sorry, it looks we're not able to find the page that you're looking for.</p>
+                    
+                    <div class="page-links-wrapper flex-row">
+                        <a href="<?= site_url(); ?>" class="button transparent-button page-banner-links-button text-white">Return home</a>
+                    </div>
+
+                    <!-- contact us page specifc info -->
+                    <?php if (is_page(13)) : ?>
+                        
+                        <?php get_template_part('template-parts/_contact-info'); ?>
+
+                    <?php endif; ?>
+                </div>
 
             <?php else : ?>
 
