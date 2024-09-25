@@ -406,6 +406,11 @@ textarea {
   }
 }
 
+[type=checkbox] {
+  position: absolute;
+  right: -999999px;
+}
+
 .name-field,
 .email-field {
   width: calc(50% - 20px);
@@ -1209,12 +1214,6 @@ span a:hover {
 .headroom {
   will-change: transform;
   transition: all 200ms linear;
-}
-.headroom--pinned {
-  transform: translateY(-100%);
-}
-.headroom--unpinned, .headroom--top {
-  transform: translateY(0);
 }
 
 #map-marker {
@@ -3804,6 +3803,7 @@ body.compensate-for-scrollbar {
   .review-mosaic .wrapper .sidebar {
     width: 100%;
     padding: 60px 30px 40px;
+    margin: 0 auto;
   }
   .review-mosaic .wrapper .sidebar .sidebar-text {
     display: inline-block;
@@ -3826,6 +3826,7 @@ body.compensate-for-scrollbar {
   .review-mosaic .wrapper .main-content .top-content .slider-container {
     padding: 0 30px 60px;
     width: 100%;
+    margin: 0 auto;
   }
   .review-mosaic .wrapper .main-content .top-content .slider-container .image-slide {
     height: 80dvw;

@@ -36,18 +36,24 @@
         <div class="wrapper flex-row">
 
             <!-- contact information -->
-            <div class="info-wrapper bg-grey">
+            <div class="info-wrapper bg-grey vcard">
                 <div class="contact-info desktop-contact-info">
                     <h2 class="text-white add-margin">Visit us</h2>
 
                     <!-- address - global acf -->
-                    <p class="standard-text text-white address add-margin"><?= $address ?></p>
+                    <p class="standard-text text-white address add-margin adr">
+                        <span class="street-address"><?= $address ?></span>
+                    </p>
 
                     <!-- email address - global acf -->
-                    <a aria-label="practice contact email address" class="info-link standard-text text-white" href="mailto:<?= $email; ?>"><?= $email; ?></a>
+                    <a aria-label="practice contact email address" class="info-link standard-text text-white email" href="mailto:<?= $email; ?>">
+                        <?= $email; ?>
+                    </a>
 
                     <!-- telephone number - global acf -->
-                    <a aria-label="practice telephone number" class="info-link standard-text text-white" href="tel:<?= str_replace(' ', '', $telephone); ?>"><?= $telephone; ?></a>
+                    <a aria-label="practice telephone number" class="info-link standard-text text-white tel" href="tel:<?= str_replace(' ', '', $telephone); ?>">
+                        <?= $telephone; ?>
+                    </a>
                 </div>
 
                 <div class="opening-times">
@@ -81,17 +87,23 @@
                 <div class="cta-button-wrapper mobile-content-wrapper">
                     
                     <!-- content - hide on mobile - duplicated from above to fit mobile design -->
-                    <div class="contact-info mobile-contact-info center-text">
+                    <div class="contact-info mobile-contact-info center-text vcard">
                         <h2 class="add-margin">Visit us</h2>
 
                         <!-- address - global acf -->
-                        <p class="standard-text address add-margin"><?= $address ?></p>
+                        <p class="standard-text address add-margin adr">
+                            <span class="street-address"><?= $address ?></span>
+                        </p>
 
                         <!-- email address - global acf -->
-                        <a aria-label="practice contact email address" class="info-link standard-text" href="mailto:<?= $email; ?>"><?= $email; ?></a>
+                        <a aria-label="practice contact email address" class="info-link standard-text email" href="mailto:<?= $email; ?>">
+                            <?= $email; ?>
+                        </a>
 
                         <!-- telephone number - global acf -->
-                        <a aria-label="practice telephone number" class="info-link standard-text" href="tel:<?= str_replace(' ', '', $telephone); ?>"><?= $telephone; ?></a>
+                        <a aria-label="practice telephone number" class="info-link standard-text tel" href="tel:<?= str_replace(' ', '', $telephone); ?>">
+                            <?= $telephone; ?>
+                        </a>
                     </div>
 
                     <?php custom_cta_button('Get directions', 'https://www.google.com/maps?q=' . $mapLocation['lat'] . ',' . $mapLocation['lng'], 'get-directions'); ?>

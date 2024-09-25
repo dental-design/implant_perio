@@ -1,4 +1,4 @@
-<form id="referral-form" action="" name="referral-form">
+<form id="referral-form" method="post" action="https://www.securedent.net/submit.ashx" name="referral-form" enctype="multipart/form-data">
         
     <div class="form-input-left-wrapper form-inner-wrapper">
 
@@ -51,15 +51,15 @@
                     </svg>
                 </div>
                 
-                <input class="contact-form-checkbox" type="checkbox" value="y clicking 'Send message' you are consenting to us replying and storing your details (see our privacy policy)." name="Checkbox" id="checkbox-checkbox" style="display: none;">
+                <input class="contact-form-checkbox" type="checkbox" value="By clicking 'Send message' you are consenting to us replying and storing your details (see our privacy policy)." name="checkbox" id="checkbox-checkbox" required />
 
                 <span class="form-blurb small-text">By clicking 'Send message' you are consenting to us replying and storing your details (see our <a href="<?= esc_url(get_permalink('3')); ?>" class="text-link">privacy policy</a>).</span>
             </label>
         </div>
 
         <input type="hidden" name="form_uid" value="aa6b431f-23b3-4ba2-a750-f13308f11304">          
-        <input name="required" type="hidden" value="dentist_name,submit_by,dentist_telephone,patient_name,patient_email,patient_telephone">
-        <input type="hidden" name="data_order" value="dentist_name,submit_by,dentist_telephone,patient_name,patient_email,patient_telephone,treatment_options,file,message,Checkbox">
+        <input name="required" type="hidden" value="dentist_name,submit_by,dentist_telephone,patient_name,patient_email,patient_telephone,checkbox">
+        <input type="hidden" name="data_order" value="dentist_name,submit_by,dentist_telephone,patient_name,patient_email,patient_telephone,treatment_options,file,message,checkbox">
         <input name="ok_url" type="hidden" id="ok_url" value="<?= esc_url(get_permalink()); ?>?contact-form-success#footer-contact-section">
         <input name="not_ok_url" type="hidden" id="not_ok_url" value="<?= esc_url(get_permalink()); ?>?contact-form-failure#footer-contact-section">
 

@@ -110,6 +110,11 @@ textarea {
 	}
 }
 
+[type="checkbox"] {
+	position: absolute;
+	left: -999999px;
+}
+
 .name-field,
 .email-field {
 	width: calc(50% - 20px);

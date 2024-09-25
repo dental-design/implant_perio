@@ -14,6 +14,7 @@ import "./modules/BeforeAfter";
 import "./modules/Lazyload";
 import "./modules/BurgerMenu";
 import "./modules/Checkbox";
+import "./modules/AdobeFont";
 import "./modules/slick";
 
 // Instantiate a new object using our modules/classes

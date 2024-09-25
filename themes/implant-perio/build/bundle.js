@@ -23,8 +23,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_Lazyload__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_Lazyload__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _modules_BurgerMenu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/BurgerMenu */ "./assets/js/modules/BurgerMenu.js");
 /* harmony import */ var _modules_Checkbox__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/Checkbox */ "./assets/js/modules/Checkbox.js");
-/* harmony import */ var _modules_slick__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/slick */ "./assets/js/modules/slick.js");
-/* harmony import */ var _modules_slick__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_slick__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _modules_AdobeFont__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/AdobeFont */ "./assets/js/modules/AdobeFont.js");
+/* harmony import */ var _modules_AdobeFont__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_AdobeFont__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _modules_slick__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/slick */ "./assets/js/modules/slick.js");
+/* harmony import */ var _modules_slick__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_modules_slick__WEBPACK_IMPORTED_MODULE_12__);
 
 
 
@@ -36,6 +38,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // standard function components
+
 
 
 
@@ -77,6 +80,43 @@ const menu = new _modules_MenuHover__WEBPACK_IMPORTED_MODULE_6__["default"]();
     arrows: false
   });
 })();
+
+/***/ }),
+
+/***/ "./assets/js/modules/AdobeFont.js":
+/*!****************************************!*\
+  !*** ./assets/js/modules/AdobeFont.js ***!
+  \****************************************/
+/***/ (() => {
+
+(function (d) {
+  var config = {
+      kitId: 'nqz2ogl',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h = d.documentElement,
+    t = setTimeout(function () {
+      h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+    }, config.scriptTimeout),
+    tk = d.createElement("script"),
+    f = false,
+    s = d.getElementsByTagName("script")[0],
+    a;
+  h.className += " wf-loading";
+  tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+  tk.async = true;
+  tk.onload = tk.onreadystatechange = function () {
+    a = this.readyState;
+    if (f || a && a != "complete" && a != "loaded") return;
+    f = true;
+    clearTimeout(t);
+    try {
+      Typekit.load(config);
+    } catch (e) {}
+  };
+  s.parentNode.insertBefore(tk, s);
+})(document);
 
 /***/ }),
 
@@ -179,7 +219,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkbox-wrapper .checkbox-check, .checkbox-check-text').click(function () {
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkbox-wrapper .checkbox-check').click(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkbox-check').toggleClass('checked');
   if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.contact-form-checkbox').checked != true) {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".contact-form-checkbox").checked = true;

@@ -26,15 +26,6 @@
 .headroom {
     will-change: transform;
     transition: all 200ms linear;
-
-    &--pinned {
-        transform: translateY(-100%);
-    }
-    
-    &--unpinned,
-    &--top {
-        transform: translateY(0);
-    }
 }
 
 // map marker

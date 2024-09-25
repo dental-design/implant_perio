@@ -14,9 +14,7 @@
         </div>
 
         <!-- reviews -->
-        <div class="review-wrapper">
-            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-            
+        <div class="review-wrapper">            
             <div class="elfsight-app-73916dd7-5d82-49a3-bb98-2e76376d2da8" data-elfsight-app-lazy></div>
         </div>
     </div>

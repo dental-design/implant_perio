@@ -38,7 +38,7 @@
                     </svg>
                 </div>
                 
-                <input class="contact-form-checkbox" type="checkbox" value="By clicking 'Send message' you are consenting to us replying and storing your details (see our privacy policy)." name="Checkbox" id="checkbox-checkbox" style="display: none;">
+                <input class="contact-form-checkbox" type="checkbox" value="By clicking 'Send message' you are consenting to us replying and storing your details (see our privacy policy)." name="checkbox" id="checkbox-checkbox" required />
 
                 <span class="form-blurb checkbox-check-text small-text">By clicking 'Send message' you are consenting to us replying and storing your details (see our <a href="<?= esc_url(get_permalink('3')); ?>" class="text-link">privacy policy</a>).</span>
             </label>
@@ -47,10 +47,9 @@
         <input type="submit" class="button black-button transparent-button" value="Send message" />
     </div>
 
-
     <input type="hidden" name="form_uid" value="16ec2a23-12a0-4633-bc61-346d620dbf42">          
-    <input name="required" type="hidden" value="name,submit_by,telephone">
-    <input type="hidden" name="data_order" value="name,submit_by,telephone,patient_status,message,Checkbox">
+    <input name="required" type="hidden" value="name,submit_by,telephone,checkbox">
+    <input type="hidden" name="data_order" value="name,submit_by,telephone,patient_status,message,checkbox">
     <input name="ok_url" type="hidden" id="ok_url" value="<?= esc_url(get_permalink()); ?>?contact-form-success#footer-contact-section">
     <input name="not_ok_url" type="hidden" id="not_ok_url" value="<?= esc_url(get_permalink()); ?>?contact-form-failure#footer-contact-section">
 

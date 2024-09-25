@@ -80,8 +80,7 @@
                     <!-- reviews - elfsight (Implant Perio) -->
                     <div class="reviews-container bg-medium-grey big">
                         <h2 class="text-white add-margin"><?= !empty($reviewHeading) ? $reviewHeading : 'What our patients say'; ?></h2>
-
-                        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                        
                         <div class="elfsight-app-363b032c-4c9a-4cff-8f26-eb9fa5cc196f" data-elfsight-app-lazy></div>
                     </div>
 
