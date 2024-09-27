@@ -1,0 +1,53 @@
+.mobile-cta {
+    display: none;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+
+    @include mobile {
+        @include flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .contact-item {
+            width: calc(50% - 1px);
+            
+            a {
+                @include flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 71px;
+                transition: all .4s ease-out;
+
+                &:hover {
+                    background-color: $grey;
+                    color: $white;
+
+                    svg {
+                        path {
+                            fill: $white;
+                        }
+                    }
+                }
+    
+                svg {
+                    margin-left: 10px;
+
+                    path {
+                        transition: all .4s ease-out;
+                    }
+                }
+            }
+        }
+    }
+
+    @include small-screen {
+        .contact-item {
+            a {
+                min-height: 50px;
+            }
+        }
+    }
+}

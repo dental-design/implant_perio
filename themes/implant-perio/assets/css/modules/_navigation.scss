@@ -354,6 +354,10 @@
         min-height: 55px;
 
         .main-navigation {
+            nav {
+                top: 55px;
+            }
+
             .homepage-link-wrapper {
                 width: calc(100% - 50px);
 

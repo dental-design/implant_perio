@@ -67,6 +67,11 @@
         h2 {
             margin-bottom: 40px;
         }
+
+        img {
+            object-fit: cover;
+            max-width: 100%;
+        }
     
         .job-title,
         .qualification  {
@@ -81,6 +86,38 @@
         > * {
             &:last-child {
                 margin-bottom: 30px;
+            }
+        }
+    }
+
+    @include mobile {
+        .team-member-bio-card {
+            max-width: 100%;
+            padding: 60px 30px 80px;
+        
+            .close-icon {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                height: 20px;
+                width: 20px;
+                font-size: 16px;
+            }
+        
+            .team-bio-top-content {
+                border-bottom: 2px solid $grey;
+                margin-bottom: 20px;
+        
+                img,
+                h2 {
+                    margin-bottom: 30px;
+                }
+        
+                > * {
+                    &:last-child {
+                        margin-bottom: 20px;
+                    }
+                }
             }
         }
     }

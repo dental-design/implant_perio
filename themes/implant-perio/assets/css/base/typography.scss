@@ -141,7 +141,6 @@ a {
 	padding: 0;
 	color: $grey;
 	transition: all .4s ease-in-out;
-    
 
 	@include tablet {
 		font-size: 18px;
@@ -158,6 +157,10 @@ a {
 	text-decoration-skip: auto;
 	transition: color 0.4s ease;
 	text-decoration: none;
+}
+
+#cookie-policy {
+	font-size: 16px;
 }
 
 p,

@@ -8,6 +8,9 @@
     <!-- map section -->
     <?php get_template_part('template-parts/_map-section'); ?>
 
+    <!-- mobile cta -->
+    <?php get_template_part('template-parts/_mobile-cta'); ?>
+
     <!-- footer bottom -->
     <section class="section footer-section bg-grey">
         <div class="container">
